@@ -1,0 +1,106 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+
+-- Executing script file `yosys.slang.f' --
+
+1. Executing SLANG frontend.
+Top level design units:
+    cfg_regs
+
+Build succeeded: 0 errors, 0 warnings
+
+1.1. Executing UNDRIVEN pass. (resolve undriven signals)
+
+1.2. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\cfg_regs.$69'.
+Removing empty process `cfg_regs.$64'.
+Removing empty process `cfg_regs.$61'.
+Found and cleaned up 1 empty switch in `\cfg_regs.$32'.
+Found and cleaned up 1 empty switch in `\cfg_regs.$0'.
+Cleaned up 3 empty switches.
+
+1.3. Executing TRIBUF pass.
+
+1.4. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 11 switch rules as full_case in process $69 in module cfg_regs.
+Marked 7 switch rules as full_case in process $32 in module cfg_regs.
+Marked 4 switch rules as full_case in process $0 in module cfg_regs.
+Removed a total of 0 dead cases.
+
+1.5. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 0 assignments to connections.
+
+1.6. Executing PROC_INIT pass (extract init attributes).
+
+1.7. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~33 debug messages>
+
+1.8. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\cfg_regs.$69'.
+     1/8: $irq_status_reg[3]$90
+     2/8: $irq_status_reg[3]$91
+     3/8: $irq_status_reg[2]$85
+     4/8: $irq_status_reg[2]$86
+     5/8: $irq_status_reg[1]$80
+     6/8: $irq_status_reg[1]$81
+     7/8: $irq_status_reg[0]$75
+     8/8: $irq_status_reg[0]$76
+Creating decoders for process `\cfg_regs.$32'.
+     1/8: $cfg_rdata[15:0]$59 [15:4]
+     2/8: $cfg_rdata[1:0]$57
+     3/8: $cfg_rdata[15:0]$58 [15:2]
+     4/8: $cfg_rdata[15:0]$45
+     5/8: $cfg_rdata[15:0]$58 [1:0]
+     6/8: $cfg_rdata[1:0]$56
+     7/8: $cfg_rdata[15:0]$59 [3:0]
+     8/8: $cfg_rdata$60
+Creating decoders for process `\cfg_regs.$0'.
+     1/14: $idle_base_th_reg$18
+     2/14: $idle_base_th_reg$19
+     3/14: $irq_status_reg$25
+     4/14: $irq_mask_reg$24
+     5/14: $wake_mask_reg$23
+     6/14: $alpha_reg$22
+     7/14: $idle_base_th_reg$21
+     8/14: $periph_en_reg$20
+     9/14: $irq_status_reg$31
+    10/14: $irq_mask_reg$30
+    11/14: $wake_mask_reg$29
+    12/14: $alpha_reg$28
+    13/14: $idle_base_th_reg$27
+    14/14: $periph_en_reg$26
+
+1.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 15 empty switches in `\cfg_regs.$69'.
+Removing empty process `cfg_regs.$69'.
+Found and cleaned up 11 empty switches in `\cfg_regs.$32'.
+Removing empty process `cfg_regs.$32'.
+Found and cleaned up 7 empty switches in `\cfg_regs.$0'.
+Removing empty process `cfg_regs.$0'.
+Cleaned up 33 empty switches.
+
+1.10. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+<suppressed ~20 debug messages>
+
+2. Executing Verilog backend.
+
+2.1. Executing BMUXMAP pass.
+
+2.2. Executing DEMUXMAP pass.
+Dumping module `\cfg_regs'.
+
+1 modules:
+  cfg_regs
+
+End of script. Logfile hash: c9e2364d40, CPU: user 0.01s system 0.00s, MEM: 25.25 MB peak
+Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+Time spent: 33% 2x read_slang (0 sec), 29% 1x opt_expr (0 sec), ...
+INFO: [UNKNOWN] subprocess_run_background: returncode=0

@@ -1,0 +1,1445 @@
+INFO: [EDA] Time: Thu Feb 19 03:08:12 2026 start - eda.work/eda.log
+INFO: [EDA] eda: version 0.3.10
+INFO: [EDA] main: eda synth --no-color --tool slang_yosys cfg_regs.sv; (run from /app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd)
+INFO: [EDA] eda_config: --config-yml=eda_config_defaults.yml observed
+INFO: [EDA] eda_config: using config: /app/venv/lib/python3.12/site-packages/opencos/eda_config_defaults.yml
+INFO: [EDA] *** OpenCOS EDA ***
+INFO: [EDA] Detected slang_yosys (/usr/local/bin/yosys)
+INFO: [EDA] --top not specified, inferred from final source file: cfg_regs (/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/cfg_regs.sv)
+INFO: [EDA] synth: top-most target name: cfg_regs
+INFO: [EDA] exec: /usr/local/bin/yosys --scriptfile yosys.slang.f (in /app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth, tee_fpath='yosys.slang.log')
+INFO: [EDA] PID 5467 for /usr/local/bin/yosys
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+
+-- Executing script file `yosys.slang.f' --
+
+1. Executing SLANG frontend.
+Top level design units:
+    cfg_regs
+
+Build succeeded: 0 errors, 0 warnings
+
+1.1. Executing UNDRIVEN pass. (resolve undriven signals)
+
+1.2. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\cfg_regs.$69'.
+Removing empty process `cfg_regs.$64'.
+Removing empty process `cfg_regs.$61'.
+Found and cleaned up 1 empty switch in `\cfg_regs.$32'.
+Found and cleaned up 1 empty switch in `\cfg_regs.$0'.
+Cleaned up 3 empty switches.
+
+1.3. Executing TRIBUF pass.
+
+1.4. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 11 switch rules as full_case in process $69 in module cfg_regs.
+Marked 7 switch rules as full_case in process $32 in module cfg_regs.
+Marked 4 switch rules as full_case in process $0 in module cfg_regs.
+Removed a total of 0 dead cases.
+
+1.5. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 0 assignments to connections.
+
+1.6. Executing PROC_INIT pass (extract init attributes).
+
+1.7. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~33 debug messages>
+
+1.8. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\cfg_regs.$69'.
+     1/8: $irq_status_reg[3]$90
+     2/8: $irq_status_reg[3]$91
+     3/8: $irq_status_reg[2]$85
+     4/8: $irq_status_reg[2]$86
+     5/8: $irq_status_reg[1]$80
+     6/8: $irq_status_reg[1]$81
+     7/8: $irq_status_reg[0]$75
+     8/8: $irq_status_reg[0]$76
+Creating decoders for process `\cfg_regs.$32'.
+     1/8: $cfg_rdata[15:0]$59 [15:4]
+     2/8: $cfg_rdata[1:0]$57
+     3/8: $cfg_rdata[15:0]$58 [15:2]
+     4/8: $cfg_rdata[15:0]$45
+     5/8: $cfg_rdata[15:0]$58 [1:0]
+     6/8: $cfg_rdata[1:0]$56
+     7/8: $cfg_rdata[15:0]$59 [3:0]
+     8/8: $cfg_rdata$60
+Creating decoders for process `\cfg_regs.$0'.
+     1/14: $idle_base_th_reg$18
+     2/14: $idle_base_th_reg$19
+     3/14: $irq_status_reg$25
+     4/14: $irq_mask_reg$24
+     5/14: $wake_mask_reg$23
+     6/14: $alpha_reg$22
+     7/14: $idle_base_th_reg$21
+     8/14: $periph_en_reg$20
+     9/14: $irq_status_reg$31
+    10/14: $irq_mask_reg$30
+    11/14: $wake_mask_reg$29
+    12/14: $alpha_reg$28
+    13/14: $idle_base_th_reg$27
+    14/14: $periph_en_reg$26
+
+1.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 15 empty switches in `\cfg_regs.$69'.
+Removing empty process `cfg_regs.$69'.
+Found and cleaned up 11 empty switches in `\cfg_regs.$32'.
+Removing empty process `cfg_regs.$32'.
+Found and cleaned up 7 empty switches in `\cfg_regs.$0'.
+Removing empty process `cfg_regs.$0'.
+Cleaned up 33 empty switches.
+
+1.10. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+<suppressed ~20 debug messages>
+
+2. Executing Verilog backend.
+
+2.1. Executing BMUXMAP pass.
+
+2.2. Executing DEMUXMAP pass.
+Dumping module `\cfg_regs'.
+
+1 modules:
+  cfg_regs
+
+End of script. Logfile hash: c9e2364d40, CPU: user 0.01s system 0.00s, MEM: 25.25 MB peak
+Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+Time spent: 33% 2x read_slang (0 sec), 29% 1x opt_expr (0 sec), ...
+INFO: [EDA] subprocess_run_background: wrote: /app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/yosys.slang.log
+INFO: [EDA] yosys.slang.f: wrote:  /app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/post_slang_ls.txt
+INFO: [EDA] exec: /usr/local/bin/yosys --scriptfile yosys.synth.f (in /app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth, tee_fpath='yosys.synth.log')
+INFO: [EDA] PID 5468 for /usr/local/bin/yosys
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+
+-- Executing script file `yosys.synth.f' --
+
+1. Executing Verilog-2005 frontend: /app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v
+Parsing SystemVerilog input from `/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v' to AST representation.
+Generating RTLIL representation for module `\cfg_regs'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `cfg_regs'. Setting top module to cfg_regs.
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \cfg_regs
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \cfg_regs
+Removed 0 unused modules.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:487$118 in module cfg_regs.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:483$116 in module cfg_regs.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:479$114 in module cfg_regs.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:475$112 in module cfg_regs.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:471$110 in module cfg_regs.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:467$108 in module cfg_regs.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:463$106 in module cfg_regs.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:459$104 in module cfg_regs.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:455$102 in module cfg_regs.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:451$100 in module cfg_regs.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:447$98 in module cfg_regs.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:443$96 in module cfg_regs.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:439$94 in module cfg_regs.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:435$92 in module cfg_regs.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:431$90 in module cfg_regs.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 15 redundant assignments.
+Promoted 42 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:487$118'.
+Found async reset \rst_n in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:483$116'.
+Found async reset \rst_n in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:479$114'.
+Found async reset \rst_n in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:475$112'.
+Found async reset \rst_n in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:471$110'.
+Found async reset \rst_n in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:467$108'.
+Found async reset \rst_n in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:463$106'.
+Found async reset \rst_n in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:459$104'.
+Found async reset \rst_n in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:455$102'.
+Found async reset \rst_n in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:451$100'.
+Found async reset \rst_n in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:447$98'.
+Found async reset \rst_n in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:443$96'.
+Found async reset \rst_n in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:439$94'.
+Found async reset \rst_n in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:435$92'.
+Found async reset \rst_n in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:431$90'.
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~10 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$282'.
+     1/1: $1\_459_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:821$20.$result[1:0]$287
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$276'.
+     1/1: $1\_451_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:791$19.$result[15:0]$281
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$270'.
+     1/1: $1\_441_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:759$18.$result[13:0]$275
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$264'.
+     1/1: $1\_433_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:729$17.$result[1:0]$269
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$258'.
+     1/1: $1\_423_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:697$16.$result[11:0]$263
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$251'.
+     1/1: $1\_401_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:653$15.$result[63:0]$257
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$245'.
+     1/1: $1\_381_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:611$14.$result[63:0]$250
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$239'.
+     1/1: $1\_373_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:581$13.$result[63:0]$244
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$232'.
+     1/1: $1\_362_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:548$12.$result[3:0]$238
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$226'.
+     1/1: $1\_355_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:519$11.$result[1:0]$231
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:487$118'.
+     1/1: $0\wake_mask_reg[3:0]
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:483$116'.
+     1/1: $0\state_prev[7:6]
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:479$114'.
+     1/1: $0\state_prev[5:4]
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:475$112'.
+     1/1: $0\state_prev[3:2]
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:471$110'.
+     1/1: $0\state_prev[1:0]
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:467$108'.
+     1/1: $0\periph_en_reg[3:0]
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:463$106'.
+     1/1: $1\irq_status_reg[3:0]
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:459$104'.
+     1/1: $0\irq_status_reg[3:0]
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:455$102'.
+     1/1: $0\irq_mask_reg[3:0]
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:451$100'.
+     1/1: $0\idle_base_th_reg[63:48]
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:447$98'.
+     1/1: $0\idle_base_th_reg[47:32]
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:443$96'.
+     1/1: $0\idle_base_th_reg[31:16]
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:439$94'.
+     1/1: $0\idle_base_th_reg[15:0]
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:435$92'.
+     1/1: $0\cfg_rdata[31:0]
+Creating decoders for process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:431$90'.
+     1/1: $0\alpha_reg[3:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\cfg_regs.\_459_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:821$10.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$282'.
+No latch inferred for signal `\cfg_regs.\_459_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:821$20.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$282'.
+No latch inferred for signal `\cfg_regs.\_459_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:821$20.a' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$282'.
+No latch inferred for signal `\cfg_regs.\_459_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:821$20.s' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$282'.
+No latch inferred for signal `\cfg_regs.\_451_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:791$9.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$276'.
+No latch inferred for signal `\cfg_regs.\_451_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:791$19.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$276'.
+No latch inferred for signal `\cfg_regs.\_451_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:791$19.a' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$276'.
+No latch inferred for signal `\cfg_regs.\_451_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:791$19.s' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$276'.
+No latch inferred for signal `\cfg_regs.\_441_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:759$8.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$270'.
+No latch inferred for signal `\cfg_regs.\_441_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:759$18.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$270'.
+No latch inferred for signal `\cfg_regs.\_441_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:759$18.a' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$270'.
+No latch inferred for signal `\cfg_regs.\_441_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:759$18.s' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$270'.
+No latch inferred for signal `\cfg_regs.\_433_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:729$7.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$264'.
+No latch inferred for signal `\cfg_regs.\_433_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:729$17.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$264'.
+No latch inferred for signal `\cfg_regs.\_433_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:729$17.a' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$264'.
+No latch inferred for signal `\cfg_regs.\_433_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:729$17.s' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$264'.
+No latch inferred for signal `\cfg_regs.\_423_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:697$6.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$258'.
+No latch inferred for signal `\cfg_regs.\_423_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:697$16.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$258'.
+No latch inferred for signal `\cfg_regs.\_423_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:697$16.a' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$258'.
+No latch inferred for signal `\cfg_regs.\_423_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:697$16.s' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$258'.
+No latch inferred for signal `\cfg_regs.\_401_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:653$5.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$251'.
+No latch inferred for signal `\cfg_regs.\_401_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:653$15.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$251'.
+No latch inferred for signal `\cfg_regs.\_401_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:653$15.a' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$251'.
+No latch inferred for signal `\cfg_regs.\_401_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:653$15.b' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$251'.
+No latch inferred for signal `\cfg_regs.\_401_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:653$15.s' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$251'.
+No latch inferred for signal `\cfg_regs.\_381_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:611$4.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$245'.
+No latch inferred for signal `\cfg_regs.\_381_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:611$14.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$245'.
+No latch inferred for signal `\cfg_regs.\_381_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:611$14.a' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$245'.
+No latch inferred for signal `\cfg_regs.\_381_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:611$14.s' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$245'.
+No latch inferred for signal `\cfg_regs.\_373_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:581$3.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$239'.
+No latch inferred for signal `\cfg_regs.\_373_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:581$13.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$239'.
+No latch inferred for signal `\cfg_regs.\_373_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:581$13.a' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$239'.
+No latch inferred for signal `\cfg_regs.\_373_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:581$13.s' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$239'.
+No latch inferred for signal `\cfg_regs.\_362_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:548$2.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$232'.
+No latch inferred for signal `\cfg_regs.\_362_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:548$12.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$232'.
+No latch inferred for signal `\cfg_regs.\_362_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:548$12.a' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$232'.
+No latch inferred for signal `\cfg_regs.\_362_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:548$12.b' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$232'.
+No latch inferred for signal `\cfg_regs.\_362_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:548$12.s' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$232'.
+No latch inferred for signal `\cfg_regs.\_355_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:519$1.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$226'.
+No latch inferred for signal `\cfg_regs.\_355_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:519$11.$result' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$226'.
+No latch inferred for signal `\cfg_regs.\_355_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:519$11.a' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$226'.
+No latch inferred for signal `\cfg_regs.\_355_$func$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:519$11.s' from process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$226'.
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\cfg_regs.\wake_mask_reg' using process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:487$118'.
+  created $adff cell `$procdff$362' with positive edge clock and positive level reset.
+Creating register for signal `\cfg_regs.\state_prev [7:6]' using process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:483$116'.
+  created $adff cell `$procdff$367' with positive edge clock and positive level reset.
+Creating register for signal `\cfg_regs.\state_prev [5:4]' using process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:479$114'.
+  created $adff cell `$procdff$372' with positive edge clock and positive level reset.
+Creating register for signal `\cfg_regs.\state_prev [3:2]' using process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:475$112'.
+  created $adff cell `$procdff$377' with positive edge clock and positive level reset.
+Creating register for signal `\cfg_regs.\state_prev [1:0]' using process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:471$110'.
+  created $adff cell `$procdff$382' with positive edge clock and positive level reset.
+Creating register for signal `\cfg_regs.\periph_en_reg' using process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:467$108'.
+  created $adff cell `$procdff$387' with positive edge clock and positive level reset.
+Creating register for signal `\cfg_regs.\irq_status_reg' using process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:463$106'.
+  created $adff cell `$procdff$392' with positive edge clock and positive level reset.
+Creating register for signal `\cfg_regs.\irq_status_reg' using process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:459$104'.
+  created $adff cell `$procdff$397' with positive edge clock and positive level reset.
+Creating register for signal `\cfg_regs.\irq_mask_reg' using process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:455$102'.
+  created $adff cell `$procdff$402' with positive edge clock and positive level reset.
+Creating register for signal `\cfg_regs.\idle_base_th_reg [63:48]' using process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:451$100'.
+  created $adff cell `$procdff$407' with positive edge clock and positive level reset.
+Creating register for signal `\cfg_regs.\idle_base_th_reg [47:32]' using process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:447$98'.
+  created $adff cell `$procdff$412' with positive edge clock and positive level reset.
+Creating register for signal `\cfg_regs.\idle_base_th_reg [31:16]' using process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:443$96'.
+  created $adff cell `$procdff$417' with positive edge clock and positive level reset.
+Creating register for signal `\cfg_regs.\idle_base_th_reg [15:0]' using process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:439$94'.
+  created $adff cell `$procdff$422' with positive edge clock and positive level reset.
+Creating register for signal `\cfg_regs.\cfg_rdata' using process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:435$92'.
+  created $adff cell `$procdff$427' with positive edge clock and positive level reset.
+Creating register for signal `\cfg_regs.\alpha_reg' using process `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:431$90'.
+  created $adff cell `$procdff$432' with positive edge clock and positive level reset.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$282'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$282'.
+Found and cleaned up 1 empty switch in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$276'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$276'.
+Found and cleaned up 1 empty switch in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$270'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$270'.
+Found and cleaned up 1 empty switch in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$264'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$264'.
+Found and cleaned up 1 empty switch in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$258'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$258'.
+Found and cleaned up 1 empty switch in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$251'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$251'.
+Found and cleaned up 1 empty switch in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$245'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$245'.
+Found and cleaned up 1 empty switch in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$239'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$239'.
+Found and cleaned up 1 empty switch in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$232'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$232'.
+Found and cleaned up 1 empty switch in `\cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$226'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:0$226'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:487$118'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:483$116'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:479$114'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:475$112'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:471$110'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:467$108'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:463$106'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:459$104'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:455$102'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:451$100'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:447$98'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:443$96'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:439$94'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:435$92'.
+Removing empty process `cfg_regs.$proc$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:431$90'.
+Cleaned up 10 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+<suppressed ~32 debug messages>
+
+2.3. Executing FUTURE pass.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+Removed 42 unused cells and 462 unused wires.
+<suppressed ~43 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module cfg_regs...
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [3]:
+    port Q[3] of cell $procdff$392 ($adff)
+    port Q[3] of cell $procdff$397 ($adff)
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [2]:
+    port Q[2] of cell $procdff$392 ($adff)
+    port Q[2] of cell $procdff$397 ($adff)
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [1]:
+    port Q[1] of cell $procdff$392 ($adff)
+    port Q[1] of cell $procdff$397 ($adff)
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [0]:
+    port Q[0] of cell $procdff$392 ($adff)
+    port Q[0] of cell $procdff$397 ($adff)
+Found and reported 4 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+<suppressed ~195 debug messages>
+Removed a total of 65 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cfg_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/6 on $pmux $procmux$289.
+    dead port 2/6 on $pmux $procmux$289.
+    dead port 3/6 on $pmux $procmux$289.
+    dead port 4/6 on $pmux $procmux$289.
+    dead port 5/6 on $pmux $procmux$289.
+    dead port 1/6 on $pmux $procmux$296.
+    dead port 2/6 on $pmux $procmux$296.
+    dead port 3/6 on $pmux $procmux$296.
+    dead port 4/6 on $pmux $procmux$296.
+    dead port 5/6 on $pmux $procmux$296.
+    dead port 1/6 on $pmux $procmux$303.
+    dead port 2/6 on $pmux $procmux$303.
+    dead port 3/6 on $pmux $procmux$303.
+    dead port 4/6 on $pmux $procmux$303.
+    dead port 5/6 on $pmux $procmux$303.
+    dead port 1/6 on $pmux $procmux$310.
+    dead port 2/6 on $pmux $procmux$310.
+    dead port 3/6 on $pmux $procmux$310.
+    dead port 4/6 on $pmux $procmux$310.
+    dead port 5/6 on $pmux $procmux$310.
+    dead port 1/6 on $pmux $procmux$331.
+    dead port 2/6 on $pmux $procmux$331.
+    dead port 3/6 on $pmux $procmux$331.
+    dead port 4/6 on $pmux $procmux$331.
+    dead port 5/6 on $pmux $procmux$331.
+    dead port 1/6 on $pmux $procmux$338.
+    dead port 2/6 on $pmux $procmux$338.
+    dead port 3/6 on $pmux $procmux$338.
+    dead port 4/6 on $pmux $procmux$338.
+    dead port 5/6 on $pmux $procmux$338.
+    dead port 1/6 on $pmux $procmux$352.
+    dead port 2/6 on $pmux $procmux$352.
+    dead port 3/6 on $pmux $procmux$352.
+    dead port 4/6 on $pmux $procmux$352.
+    dead port 5/6 on $pmux $procmux$352.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:376$36.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:384$44.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:493$123.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:495$125.
+    dead port 1/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:496$126.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:525$132.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:554$138.
+    dead port 1/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:555$139.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:558$142.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:587$148.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:617$155.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:620$158.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:623$161.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:627$165.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:630$168.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:660$175.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:663$178.
+    dead port 1/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:670$185.
+    dead port 1/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:673$188.
+    dead port 1/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:698$190.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:704$196.
+    dead port 1/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:706$198.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:735$204.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:765$211.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:767$213.
+    dead port 2/2 on $mux $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:797$220.
+Removed 61 multiplexer ports.
+<suppressed ~18 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cfg_regs.
+    New ctrl vector for $pmux cell $procmux$317: $auto$opt_reduce.cc:137:opt_pmux$434
+    New ctrl vector for $pmux cell $procmux$324: $auto$opt_reduce.cc:137:opt_pmux$436
+  Optimizing cells in module \cfg_regs.
+Performed a total of 2 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+Removed 0 unused cells and 99 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cfg_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cfg_regs.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 32) from port A of cell cfg_regs.$lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:353$22 ($lt).
+Removed top 28 bits (of 32) from port B of cell cfg_regs.$lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:353$22 ($lt).
+Converting cell cfg_regs.$lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:353$22 ($lt) from signed to unsigned.
+Removed top 1 bits (of 31) from port A of cell cfg_regs.$lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:353$22 ($lt).
+Removed top 1 bits (of 4) from port B of cell cfg_regs.$lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:353$22 ($lt).
+Removed top 1 bits (of 32) from port A of cell cfg_regs.$ge$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:355$24 ($ge).
+Removed top 31 bits (of 32) from port B of cell cfg_regs.$ge$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:355$24 ($ge).
+Converting cell cfg_regs.$ge$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:355$24 ($ge) from signed to unsigned.
+Removed top 1 bits (of 31) from port A of cell cfg_regs.$ge$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:355$24 ($ge).
+Removed top 3 bits (of 8) from port B of cell cfg_regs.$ge$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:369$29 ($ge).
+Removed top 24 bits (of 32) from port A of cell cfg_regs.$lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:370$30 ($lt).
+Removed top 26 bits (of 32) from port B of cell cfg_regs.$lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:370$30 ($lt).
+Removed top 24 bits (of 32) from port A of cell cfg_regs.$sub$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:372$32 ($sub).
+Removed top 27 bits (of 32) from port B of cell cfg_regs.$sub$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:372$32 ($sub).
+Removed top 23 bits (of 32) from port Y of cell cfg_regs.$sub$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:372$32 ($sub).
+Removed top 24 bits (of 32) from port A of cell cfg_regs.$lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:378$38 ($lt).
+Removed top 24 bits (of 32) from port B of cell cfg_regs.$lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:378$38 ($lt).
+Removed top 24 bits (of 32) from port A of cell cfg_regs.$sub$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:380$40 ($sub).
+Removed top 24 bits (of 32) from port B of cell cfg_regs.$sub$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:380$40 ($sub).
+Removed top 23 bits (of 32) from port Y of cell cfg_regs.$sub$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:380$40 ($sub).
+Removed top 1 bits (of 32) from port A of cell cfg_regs.$lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:382$42 ($lt).
+Removed top 28 bits (of 32) from port B of cell cfg_regs.$lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:382$42 ($lt).
+Converting cell cfg_regs.$lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:382$42 ($lt) from signed to unsigned.
+Removed top 1 bits (of 31) from port A of cell cfg_regs.$lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:382$42 ($lt).
+Removed top 1 bits (of 4) from port B of cell cfg_regs.$lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:382$42 ($lt).
+Removed top 1 bits (of 2) from port B of cell cfg_regs.$eq$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:415$75 ($eq).
+Removed top 4 bits (of 8) from port B of cell cfg_regs.$eq$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:521$128 ($eq).
+Removed top 4 bits (of 8) from port B of cell cfg_regs.$eq$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:522$129 ($eq).
+Removed top 5 bits (of 8) from port B of cell cfg_regs.$eq$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:523$130 ($eq).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== cfg_regs ===
+
+   Number of wires:                114
+   Number of wire bits:           1582
+   Number of public wires:         113
+   Number of public wire bits:    1581
+   Number of ports:                 13
+   Number of port bits:            161
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 92
+     $adff                          15
+     $and                            2
+     $bwmux                          1
+     $eq                             7
+     $ge                             3
+     $logic_and                      8
+     $logic_not                      2
+     $lt                             4
+     $mux                           40
+     $ne                             4
+     $not                            1
+     $pmux                           1
+     $reduce_or                      2
+     $sub                            2
+
+2.13. Executing CHECK pass (checking for obvious problems).
+Checking module cfg_regs...
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [3]:
+    port Q[3] of cell $procdff$392 ($adff)
+    port Q[3] of cell $procdff$397 ($adff)
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [2]:
+    port Q[2] of cell $procdff$392 ($adff)
+    port Q[2] of cell $procdff$397 ($adff)
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [1]:
+    port Q[1] of cell $procdff$392 ($adff)
+    port Q[1] of cell $procdff$397 ($adff)
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [0]:
+    port Q[0] of cell $procdff$392 ($adff)
+    port Q[0] of cell $procdff$397 ($adff)
+Found and reported 4 problems.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+4. Executing SYNTH pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `cfg_regs'. Setting top module to cfg_regs.
+
+4.1.1. Analyzing design hierarchy..
+Top module:  \cfg_regs
+
+4.1.2. Analyzing design hierarchy..
+Top module:  \cfg_regs
+Removed 0 unused modules.
+
+4.2. Executing PROC pass (convert processes to netlists).
+
+4.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+4.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.2.4. Executing PROC_INIT pass (extract init attributes).
+
+4.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+4.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+4.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+4.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+4.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+4.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+
+4.5. Executing CHECK pass (checking for obvious problems).
+Checking module cfg_regs...
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [3]:
+    port Q[3] of cell $procdff$392 ($adff)
+    port Q[3] of cell $procdff$397 ($adff)
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [2]:
+    port Q[2] of cell $procdff$392 ($adff)
+    port Q[2] of cell $procdff$397 ($adff)
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [1]:
+    port Q[1] of cell $procdff$392 ($adff)
+    port Q[1] of cell $procdff$397 ($adff)
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [0]:
+    port Q[0] of cell $procdff$392 ($adff)
+    port Q[0] of cell $procdff$397 ($adff)
+Found and reported 4 problems.
+
+4.6. Executing OPT pass (performing simple optimizations).
+
+4.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+4.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+Removed a total of 0 cells.
+
+4.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cfg_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+4.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cfg_regs.
+Performed a total of 0 changes.
+
+4.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+Removed a total of 0 cells.
+
+4.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+
+4.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+4.6.9. Finished OPT passes. (There is nothing left to do.)
+
+4.7. Executing FSM pass (extract and optimize FSM).
+
+4.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+4.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+4.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+
+4.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+4.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+4.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+4.8. Executing OPT pass (performing simple optimizations).
+
+4.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+4.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+Removed a total of 0 cells.
+
+4.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cfg_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+4.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cfg_regs.
+Performed a total of 0 changes.
+
+4.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+Removed a total of 0 cells.
+
+4.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$432 ($adff) from module cfg_regs (D = \cfg_wdata [3:0], Q = \alpha_reg).
+Adding EN signal on $procdff$427 ($adff) from module cfg_regs (D = { 16'0000000000000000 \_208_ \_118_ }, Q = \cfg_rdata).
+Adding EN signal on $procdff$422 ($adff) from module cfg_regs (D = \_007_ [15:0], Q = \idle_base_th_reg [15:0]).
+Adding EN signal on $procdff$417 ($adff) from module cfg_regs (D = \_007_ [31:16], Q = \idle_base_th_reg [31:16]).
+Adding EN signal on $procdff$412 ($adff) from module cfg_regs (D = \_007_ [47:32], Q = \idle_base_th_reg [47:32]).
+Adding EN signal on $procdff$407 ($adff) from module cfg_regs (D = \_007_ [63:48], Q = \idle_base_th_reg [63:48]).
+Adding EN signal on $procdff$402 ($adff) from module cfg_regs (D = \cfg_wdata [3:0], Q = \irq_mask_reg).
+Adding EN signal on $procdff$397 ($adff) from module cfg_regs (D = \_027_, Q = \irq_status_reg).
+Adding EN signal on $procdff$392 ($adff) from module cfg_regs (D = \_094_, Q = \irq_status_reg [2]).
+Adding EN signal on $procdff$392 ($adff) from module cfg_regs (D = \_092_, Q = \irq_status_reg [1]).
+Adding EN signal on $procdff$392 ($adff) from module cfg_regs (D = \_090_, Q = \irq_status_reg [0]).
+Adding EN signal on $procdff$392 ($adff) from module cfg_regs (D = \_096_, Q = \irq_status_reg [3]).
+Adding EN signal on $procdff$387 ($adff) from module cfg_regs (D = \cfg_wdata [3:0], Q = \periph_en_reg).
+Adding EN signal on $procdff$362 ($adff) from module cfg_regs (D = \cfg_wdata [3:0], Q = \wake_mask_reg).
+Setting constant 0-bit at position 16 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+Setting constant 0-bit at position 17 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+Setting constant 0-bit at position 18 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+Setting constant 0-bit at position 19 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+Setting constant 0-bit at position 20 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+Setting constant 0-bit at position 21 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+Setting constant 0-bit at position 22 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+Setting constant 0-bit at position 23 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+Setting constant 0-bit at position 24 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+Setting constant 0-bit at position 25 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+Setting constant 0-bit at position 26 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+Setting constant 0-bit at position 27 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+Setting constant 0-bit at position 28 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+Setting constant 0-bit at position 29 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+Setting constant 0-bit at position 30 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+Setting constant 0-bit at position 31 on $auto$ff.cc:266:slice$440 ($adffe) from module cfg_regs.
+
+4.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+Removed 15 unused cells and 15 unused wires.
+<suppressed ~16 debug messages>
+
+4.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+<suppressed ~4 debug messages>
+
+4.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cfg_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+4.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cfg_regs.
+Performed a total of 0 changes.
+
+4.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+4.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+4.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+4.8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cfg_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+4.8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cfg_regs.
+Performed a total of 0 changes.
+
+4.8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+Removed a total of 0 cells.
+
+4.8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+
+4.8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+4.8.23. Finished OPT passes. (There is nothing left to do.)
+
+4.9. Executing WREDUCE pass (reducing word size of cells).
+
+4.10. Executing PEEPOPT pass (run peephole optimizers).
+
+4.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+
+4.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module cfg_regs:
+  creating $macc model for $sub$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:372$32 ($sub).
+  creating $macc model for $sub$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:380$40 ($sub).
+  creating $alu model for $macc $sub$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:380$40.
+  creating $alu model for $macc $sub$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:372$32.
+  creating $alu model for $ge$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:355$24 ($ge): new $alu
+  creating $alu model for $ge$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:369$29 ($ge): merged with $sub$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:372$32.
+  creating $alu model for $ge$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:377$37 ($ge): merged with $sub$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:380$40.
+  creating $alu model for $lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:353$22 ($lt): new $alu
+  creating $alu model for $lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:370$30 ($lt): new $alu
+  creating $alu model for $lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:378$38 ($lt): new $alu
+  creating $alu model for $lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:382$42 ($lt): new $alu
+  creating $alu cell for $lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:382$42: $auto$alumacc.cc:495:replace_alu$491
+  creating $alu cell for $lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:378$38: $auto$alumacc.cc:495:replace_alu$496
+  creating $alu cell for $lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:370$30: $auto$alumacc.cc:495:replace_alu$501
+  creating $alu cell for $lt$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:353$22: $auto$alumacc.cc:495:replace_alu$506
+  creating $alu cell for $ge$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:355$24: $auto$alumacc.cc:495:replace_alu$511
+  creating $alu cell for $sub$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:372$32, $ge$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:369$29: $auto$alumacc.cc:495:replace_alu$524
+  creating $alu cell for $sub$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:380$40, $ge$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:377$37: $auto$alumacc.cc:495:replace_alu$537
+  created 7 $alu and 0 $macc cells.
+
+4.13. Executing SHARE pass (SAT-based resource sharing).
+
+4.14. Executing OPT pass (performing simple optimizations).
+
+4.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+<suppressed ~8 debug messages>
+
+4.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+Removed a total of 0 cells.
+
+4.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cfg_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+4.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cfg_regs.
+Performed a total of 0 changes.
+
+4.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+Removed a total of 0 cells.
+
+4.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+Removed 4 unused cells and 18 unused wires.
+<suppressed ~6 debug messages>
+
+4.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+4.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cfg_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+4.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cfg_regs.
+Performed a total of 0 changes.
+
+4.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+Removed a total of 0 cells.
+
+4.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+
+4.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+4.14.16. Finished OPT passes. (There is nothing left to do.)
+
+4.15. Executing MEMORY pass.
+
+4.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+
+4.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+
+4.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+
+4.17. Executing OPT pass (performing simple optimizations).
+
+4.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+<suppressed ~18 debug messages>
+
+4.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+<suppressed ~51 debug messages>
+Removed a total of 17 cells.
+
+4.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+Removed 0 unused cells and 32 unused wires.
+<suppressed ~1 debug messages>
+
+4.17.5. Finished fast OPT passes.
+
+4.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.19. Executing OPT pass (performing simple optimizations).
+
+4.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+4.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+Removed a total of 0 cells.
+
+4.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cfg_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~9 debug messages>
+
+4.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cfg_regs.
+    Consolidated identical input bits for $mux cell $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:357$26:
+      Old ports: A=16'1111111111111111, B=16'0000000000000000, Y=\_004_
+      New ports: A=1'1, B=1'0, Y=\_004_ [0]
+      New connections: \_004_ [15:1] = { \_004_ [0] \_004_ [0] \_004_ [0] \_004_ [0] \_004_ [0] \_004_ [0] \_004_ [0] \_004_ [0] \_004_ [0] \_004_ [0] \_004_ [0] \_004_ [0] \_004_ [0] \_004_ [0] \_004_ [0] }
+  Optimizing cells in module \cfg_regs.
+    Consolidated identical input bits for $mux cell $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:422$82:
+      Old ports: A=16'0000000000000000, B=\_004_, Y=\_006_ [15:0]
+      New ports: A=1'0, B=\_004_ [0], Y=\_006_ [0]
+      New connections: \_006_ [15:1] = { \_006_ [0] \_006_ [0] \_006_ [0] \_006_ [0] \_006_ [0] \_006_ [0] \_006_ [0] \_006_ [0] \_006_ [0] \_006_ [0] \_006_ [0] \_006_ [0] \_006_ [0] \_006_ [0] \_006_ [0] }
+    Consolidated identical input bits for $mux cell $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:423$83:
+      Old ports: A=16'0000000000000000, B=\_004_, Y=\_006_ [31:16]
+      New ports: A=1'0, B=\_004_ [0], Y=\_006_ [16]
+      New connections: \_006_ [31:17] = { \_006_ [16] \_006_ [16] \_006_ [16] \_006_ [16] \_006_ [16] \_006_ [16] \_006_ [16] \_006_ [16] \_006_ [16] \_006_ [16] \_006_ [16] \_006_ [16] \_006_ [16] \_006_ [16] \_006_ [16] }
+    Consolidated identical input bits for $mux cell $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:424$84:
+      Old ports: A=16'0000000000000000, B=\_004_, Y=\_006_ [47:32]
+      New ports: A=1'0, B=\_004_ [0], Y=\_006_ [32]
+      New connections: \_006_ [47:33] = { \_006_ [32] \_006_ [32] \_006_ [32] \_006_ [32] \_006_ [32] \_006_ [32] \_006_ [32] \_006_ [32] \_006_ [32] \_006_ [32] \_006_ [32] \_006_ [32] \_006_ [32] \_006_ [32] \_006_ [32] }
+    Consolidated identical input bits for $mux cell $ternary$/app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/slang/cfg_regs.v:425$85:
+      Old ports: A=16'0000000000000000, B=\_004_, Y=\_006_ [63:48]
+      New ports: A=1'0, B=\_004_ [0], Y=\_006_ [48]
+      New connections: \_006_ [63:49] = { \_006_ [48] \_006_ [48] \_006_ [48] \_006_ [48] \_006_ [48] \_006_ [48] \_006_ [48] \_006_ [48] \_006_ [48] \_006_ [48] \_006_ [48] \_006_ [48] \_006_ [48] \_006_ [48] \_006_ [48] }
+  Optimizing cells in module \cfg_regs.
+Performed a total of 5 changes.
+
+4.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+Removed a total of 0 cells.
+
+4.19.6. Executing OPT_SHARE pass.
+
+4.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+
+4.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+<suppressed ~5 debug messages>
+
+4.19.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.19.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cfg_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+4.19.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cfg_regs.
+Performed a total of 0 changes.
+
+4.19.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+4.19.14. Executing OPT_SHARE pass.
+
+4.19.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.19.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+4.19.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.19.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cfg_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+4.19.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cfg_regs.
+Performed a total of 0 changes.
+
+4.19.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+Removed a total of 0 cells.
+
+4.19.22. Executing OPT_SHARE pass.
+
+4.19.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+
+4.19.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+4.19.26. Finished OPT passes. (There is nothing left to do.)
+
+4.20. Executing TECHMAP pass (map to technology primitives).
+
+4.20.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod$1d1e68f77481583066c6d429218f48ea9d5739b3\_90_alu for cells of type $alu.
+Using template $paramod$5546fdacc672a3d7dd1c41165b00804f01545b36\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$dde52db7035cb02b3cc5e73865788532339e3bcb\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $bwmux.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod$b8c0a997bce700f23568a5ada79cc6781d1f5ca0\_90_alu for cells of type $alu.
+Using template $paramod$740b056ede97228d3eae64ea2fdc81f0a33e0fe7\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$95ab7b964273918a033d1324366ecc612d202989\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011100 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000010 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~1179 debug messages>
+
+4.21. Executing OPT pass (performing simple optimizations).
+
+4.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+<suppressed ~521 debug messages>
+
+4.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+<suppressed ~540 debug messages>
+Removed a total of 180 cells.
+
+4.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:266:slice$1212 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [15], Q = \idle_base_th_reg [63]).
+Adding EN signal on $auto$ff.cc:266:slice$1228 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [15], Q = \idle_base_th_reg [47]).
+Adding EN signal on $auto$ff.cc:266:slice$1244 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [15], Q = \idle_base_th_reg [31]).
+Adding EN signal on $auto$ff.cc:266:slice$1260 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [15], Q = \idle_base_th_reg [15]).
+Adding EN signal on $auto$ff.cc:266:slice$1256 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [11], Q = \idle_base_th_reg [11]).
+Adding EN signal on $auto$ff.cc:266:slice$1257 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [12], Q = \idle_base_th_reg [12]).
+Adding EN signal on $auto$ff.cc:266:slice$1258 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [13], Q = \idle_base_th_reg [13]).
+Adding EN signal on $auto$ff.cc:266:slice$1252 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [7], Q = \idle_base_th_reg [7]).
+Adding EN signal on $auto$ff.cc:266:slice$1259 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [14], Q = \idle_base_th_reg [14]).
+Adding EN signal on $auto$ff.cc:266:slice$1253 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [8], Q = \idle_base_th_reg [8]).
+Adding EN signal on $auto$ff.cc:266:slice$1254 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [9], Q = \idle_base_th_reg [9]).
+Adding EN signal on $auto$ff.cc:266:slice$1251 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [6], Q = \idle_base_th_reg [6]).
+Adding EN signal on $auto$ff.cc:266:slice$1255 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [10], Q = \idle_base_th_reg [10]).
+Adding EN signal on $auto$ff.cc:266:slice$1197 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [0], Q = \idle_base_th_reg [48]).
+Adding EN signal on $auto$ff.cc:266:slice$1198 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [1], Q = \idle_base_th_reg [49]).
+Adding EN signal on $auto$ff.cc:266:slice$1199 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [2], Q = \idle_base_th_reg [50]).
+Adding EN signal on $auto$ff.cc:266:slice$1200 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [3], Q = \idle_base_th_reg [51]).
+Adding EN signal on $auto$ff.cc:266:slice$1201 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [4], Q = \idle_base_th_reg [52]).
+Adding EN signal on $auto$ff.cc:266:slice$1202 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [5], Q = \idle_base_th_reg [53]).
+Adding EN signal on $auto$ff.cc:266:slice$1203 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [6], Q = \idle_base_th_reg [54]).
+Adding EN signal on $auto$ff.cc:266:slice$1204 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [7], Q = \idle_base_th_reg [55]).
+Adding EN signal on $auto$ff.cc:266:slice$1205 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [8], Q = \idle_base_th_reg [56]).
+Adding EN signal on $auto$ff.cc:266:slice$1206 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [9], Q = \idle_base_th_reg [57]).
+Adding EN signal on $auto$ff.cc:266:slice$1207 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [10], Q = \idle_base_th_reg [58]).
+Adding EN signal on $auto$ff.cc:266:slice$1208 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [11], Q = \idle_base_th_reg [59]).
+Adding EN signal on $auto$ff.cc:266:slice$1209 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [12], Q = \idle_base_th_reg [60]).
+Adding EN signal on $auto$ff.cc:266:slice$1210 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [13], Q = \idle_base_th_reg [61]).
+Adding EN signal on $auto$ff.cc:266:slice$1211 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [14], Q = \idle_base_th_reg [62]).
+Adding EN signal on $auto$ff.cc:266:slice$1213 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [0], Q = \idle_base_th_reg [32]).
+Adding EN signal on $auto$ff.cc:266:slice$1214 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [1], Q = \idle_base_th_reg [33]).
+Adding EN signal on $auto$ff.cc:266:slice$1215 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [2], Q = \idle_base_th_reg [34]).
+Adding EN signal on $auto$ff.cc:266:slice$1216 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [3], Q = \idle_base_th_reg [35]).
+Adding EN signal on $auto$ff.cc:266:slice$1217 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [4], Q = \idle_base_th_reg [36]).
+Adding EN signal on $auto$ff.cc:266:slice$1218 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [5], Q = \idle_base_th_reg [37]).
+Adding EN signal on $auto$ff.cc:266:slice$1219 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [6], Q = \idle_base_th_reg [38]).
+Adding EN signal on $auto$ff.cc:266:slice$1220 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [7], Q = \idle_base_th_reg [39]).
+Adding EN signal on $auto$ff.cc:266:slice$1221 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [8], Q = \idle_base_th_reg [40]).
+Adding EN signal on $auto$ff.cc:266:slice$1222 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [9], Q = \idle_base_th_reg [41]).
+Adding EN signal on $auto$ff.cc:266:slice$1223 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [10], Q = \idle_base_th_reg [42]).
+Adding EN signal on $auto$ff.cc:266:slice$1224 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [11], Q = \idle_base_th_reg [43]).
+Adding EN signal on $auto$ff.cc:266:slice$1225 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [12], Q = \idle_base_th_reg [44]).
+Adding EN signal on $auto$ff.cc:266:slice$1226 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [13], Q = \idle_base_th_reg [45]).
+Adding EN signal on $auto$ff.cc:266:slice$1227 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [14], Q = \idle_base_th_reg [46]).
+Adding EN signal on $auto$ff.cc:266:slice$1229 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [0], Q = \idle_base_th_reg [16]).
+Adding EN signal on $auto$ff.cc:266:slice$1230 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [1], Q = \idle_base_th_reg [17]).
+Adding EN signal on $auto$ff.cc:266:slice$1231 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [2], Q = \idle_base_th_reg [18]).
+Adding EN signal on $auto$ff.cc:266:slice$1232 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [3], Q = \idle_base_th_reg [19]).
+Adding EN signal on $auto$ff.cc:266:slice$1233 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [4], Q = \idle_base_th_reg [20]).
+Adding EN signal on $auto$ff.cc:266:slice$1234 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [5], Q = \idle_base_th_reg [21]).
+Adding EN signal on $auto$ff.cc:266:slice$1235 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [6], Q = \idle_base_th_reg [22]).
+Adding EN signal on $auto$ff.cc:266:slice$1236 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [7], Q = \idle_base_th_reg [23]).
+Adding EN signal on $auto$ff.cc:266:slice$1237 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [8], Q = \idle_base_th_reg [24]).
+Adding EN signal on $auto$ff.cc:266:slice$1238 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [9], Q = \idle_base_th_reg [25]).
+Adding EN signal on $auto$ff.cc:266:slice$1239 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [10], Q = \idle_base_th_reg [26]).
+Adding EN signal on $auto$ff.cc:266:slice$1240 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [11], Q = \idle_base_th_reg [27]).
+Adding EN signal on $auto$ff.cc:266:slice$1241 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [12], Q = \idle_base_th_reg [28]).
+Adding EN signal on $auto$ff.cc:266:slice$1242 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [13], Q = \idle_base_th_reg [29]).
+Adding EN signal on $auto$ff.cc:266:slice$1243 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [14], Q = \idle_base_th_reg [30]).
+Adding EN signal on $auto$ff.cc:266:slice$1245 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [0], Q = \idle_base_th_reg [0]).
+Adding EN signal on $auto$ff.cc:266:slice$1246 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [1], Q = \idle_base_th_reg [1]).
+Adding EN signal on $auto$ff.cc:266:slice$1247 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [2], Q = \idle_base_th_reg [2]).
+Adding EN signal on $auto$ff.cc:266:slice$1248 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [3], Q = \idle_base_th_reg [3]).
+Adding EN signal on $auto$ff.cc:266:slice$1249 ($_DFFE_PN0P_) from module cfg_regs (D = \cfg_wdata [4], Q = \idle_base_th_reg [4]).
+Adding EN signal on $auto$ff.cc:266:slice$1250 ($_DFFE_PN1P_) from module cfg_regs (D = \cfg_wdata [5], Q = \idle_base_th_reg [5]).
+
+4.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+Removed 88 unused cells and 550 unused wires.
+<suppressed ~89 debug messages>
+
+4.21.5. Rerunning OPT passes. (Removed registers in this run.)
+
+4.21.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+
+4.21.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+<suppressed ~180 debug messages>
+Removed a total of 60 cells.
+
+4.21.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+Removed 0 unused cells and 60 unused wires.
+<suppressed ~1 debug messages>
+
+4.21.10. Finished fast OPT passes.
+
+4.22. Executing ABC pass (technology mapping using ABC).
+
+4.22.1. Extracting gate netlist of module `\cfg_regs' to `<abc-temp-dir>/input.blif'..
+Extracted 307 gates and 421 wires to a netlist network with 113 inputs and 38 outputs.
+
+4.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        6
+ABC RESULTS:            ANDNOT cells:       65
+ABC RESULTS:               MUX cells:       60
+ABC RESULTS:              NAND cells:        4
+ABC RESULTS:               NOR cells:        9
+ABC RESULTS:               NOT cells:        4
+ABC RESULTS:                OR cells:       69
+ABC RESULTS:             ORNOT cells:       25
+ABC RESULTS:               XOR cells:       10
+ABC RESULTS:        internal signals:      270
+ABC RESULTS:           input signals:      113
+ABC RESULTS:          output signals:       38
+Removing temp directory.
+
+4.23. Executing OPT pass (performing simple optimizations).
+
+4.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cfg_regs.
+<suppressed ~22 debug messages>
+
+4.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cfg_regs'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+4.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+Removed 2 unused cells and 265 unused wires.
+<suppressed ~3 debug messages>
+
+4.23.5. Finished fast OPT passes.
+
+4.24. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `cfg_regs'. Setting top module to cfg_regs.
+
+4.24.1. Analyzing design hierarchy..
+Top module:  \cfg_regs
+
+4.24.2. Analyzing design hierarchy..
+Top module:  \cfg_regs
+Removed 0 unused modules.
+
+4.25. Printing statistics.
+
+=== cfg_regs ===
+
+   Number of wires:                274
+   Number of wire bits:           1139
+   Number of public wires:          50
+   Number of public wire bits:     915
+   Number of ports:                 13
+   Number of port bits:            161
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                361
+     $_ANDNOT_                      65
+     $_AND_                          6
+     $_DFFE_PN0N_                    4
+     $_DFFE_PN0P_                   71
+     $_DFFE_PN1P_                   29
+     $_DFF_PN0_                      8
+     $_MUX_                         60
+     $_NAND_                         4
+     $_NOR_                          9
+     $_NOT_                          2
+     $_ORNOT_                       24
+     $_OR_                          69
+     $_XOR_                         10
+
+4.26. Executing CHECK pass (checking for obvious problems).
+Checking module cfg_regs...
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [3]:
+    port Q[0] of cell $auto$ff.cc:266:slice$1192 ($_DFFE_PN0N_)
+    port Q[0] of cell $auto$ff.cc:266:slice$711 ($_DFFE_PN0P_)
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [1]:
+    port Q[0] of cell $auto$ff.cc:266:slice$1190 ($_DFFE_PN0N_)
+    port Q[0] of cell $auto$ff.cc:266:slice$705 ($_DFFE_PN0P_)
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [0]:
+    port Q[0] of cell $auto$ff.cc:266:slice$1189 ($_DFFE_PN0N_)
+    port Q[0] of cell $auto$ff.cc:266:slice$708 ($_DFFE_PN0P_)
+Warning: multiple conflicting drivers for cfg_regs.\irq_status_reg [2]:
+    port Q[0] of cell $auto$ff.cc:266:slice$1188 ($_DFFE_PN0P_)
+    port Q[0] of cell $auto$ff.cc:266:slice$1191 ($_DFFE_PN0N_)
+Found and reported 4 problems.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cfg_regs..
+
+6. Executing Verilog backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Dumping module `\cfg_regs'.
+
+7. Executing JSON backend.
+
+Warnings: 8 unique messages, 16 total
+End of script. Logfile hash: ee60c9c01a, CPU: user 0.28s system 0.00s, MEM: 26.78 MB peak
+Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+Time spent: 20% 30x opt_clean (0 sec), 19% 36x opt_expr (0 sec), ...
+INFO: [EDA] subprocess_run_background: wrote: /app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/yosys.synth.log
+INFO: [EDA] yosys: wrote verilog to /app/eda.work/d55a0a9b-8d3b-4608-a2c0-22957c86e4cf.edacmd/eda.work/cfg_regs.synth/yosys/cfg_regs.v
+INFO: [EDA] Time: Thu Feb 19 03:08:13 2026 stop - eda.work/eda.log
+INFO: [EDA] Closing logfile: eda.work/eda.log
