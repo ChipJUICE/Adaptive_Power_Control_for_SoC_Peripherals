@@ -47,22 +47,22 @@ Each peripheral is independently monitored and dynamically transitioned between 
 
 ## 🧩 Module Descriptions
 
-### 1️⃣ `cfg_regs` — Configuration & Control Registers *(SAMMY)*  
+### 1️⃣ `cfg_regs` — Configuration & Control Registers   
 Provides a programmable interface to control power behavior at runtime.
 
-### 2️⃣ `activity_counter` — Activity Monitoring *(SAMMY)*  
+### 2️⃣ `activity_counter` — Activity Monitoring   
 Tracks whether peripherals are active or idle.
 
-### 3️⃣ `idle_predictor` — Adaptive Idle Logic *(NAVEEN)*  
+### 3️⃣ `idle_predictor` — Adaptive Idle Logic   
 Determines when a peripheral is eligible to enter SLEEP mode.
 
-### 4️⃣ `power_fsm` — Power State Machine *(NAVEEN)*  
+### 4️⃣ `power_fsm` — Power State Machine   
 Controls the power state of each peripheral.
 
-### 5️⃣ `clock_gater` — Clock Gating Logic *(ARMISH)*  
+### 5️⃣ `clock_gater` — Clock Gating Logic   
 Generates gated clocks for peripherals to reduce switching activity.
 
-### 6️⃣ `perf_counters` — Performance Metrics *(NAVEEN)*  
+### 6️⃣ `perf_counters` — Performance Metrics   
 Provides observability into power behavior.
 
 ### 7️⃣ `pwr_ctrl_top` — Top-Level Integration  
