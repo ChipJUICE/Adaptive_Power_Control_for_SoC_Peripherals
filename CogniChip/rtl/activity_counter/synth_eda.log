@@ -1,0 +1,940 @@
+INFO: [EDA] Time: Thu Feb 19 03:21:26 2026 start - eda.work/eda.log
+INFO: [EDA] eda: version 0.3.10
+INFO: [EDA] main: eda synth --no-color --tool slang_yosys activity_counter.sv; (run from /app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd)
+INFO: [EDA] eda_config: --config-yml=eda_config_defaults.yml observed
+INFO: [EDA] eda_config: using config: /app/venv/lib/python3.12/site-packages/opencos/eda_config_defaults.yml
+INFO: [EDA] *** OpenCOS EDA ***
+INFO: [EDA] Detected slang_yosys (/usr/local/bin/yosys)
+INFO: [EDA] --top not specified, inferred from final source file: activity_counter (/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/activity_counter.sv)
+INFO: [EDA] synth: top-most target name: activity_counter
+INFO: [EDA] exec: /usr/local/bin/yosys --scriptfile yosys.slang.f (in /app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth, tee_fpath='yosys.slang.log')
+INFO: [EDA] PID 4888 for /usr/local/bin/yosys
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+
+-- Executing script file `yosys.slang.f' --
+
+1. Executing SLANG frontend.
+Top level design units:
+    activity_counter
+
+Build succeeded: 0 errors, 0 warnings
+
+1.1. Executing UNDRIVEN pass. (resolve undriven signals)
+
+1.2. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `activity_counter.$54'.
+Found and cleaned up 1 empty switch in `\activity_counter.$27'.
+Found and cleaned up 1 empty switch in `\activity_counter.$0'.
+Cleaned up 2 empty switches.
+
+1.3. Executing TRIBUF pass.
+
+1.4. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 23 switch rules as full_case in process $27 in module activity_counter.
+Marked 23 switch rules as full_case in process $0 in module activity_counter.
+Removed a total of 0 dead cases.
+
+1.5. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 24 redundant assignments.
+Promoted 0 assignments to connections.
+
+1.6. Executing PROC_INIT pass (extract init attributes).
+
+1.7. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~46 debug messages>
+
+1.8. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\activity_counter.$27'.
+     1/12: $activity_timer[15:12]$51
+     2/12: $activity_timer[15:12]$52
+     3/12: $activity_timer[15:12]$53
+     4/12: $activity_timer[11:8]$45
+     5/12: $activity_timer[11:8]$46
+     6/12: $activity_timer[11:8]$47
+     7/12: $activity_timer[7:4]$39
+     8/12: $activity_timer[7:4]$40
+     9/12: $activity_timer[7:4]$41
+    10/12: $activity_timer[3:0]$33
+    11/12: $activity_timer[3:0]$34
+    12/12: $activity_timer[3:0]$35
+Creating decoders for process `\activity_counter.$0'.
+     1/12: $idle_counter[63:48]$24
+     2/12: $idle_counter[63:48]$25
+     3/12: $idle_counter[63:48]$26
+     4/12: $idle_counter[47:32]$18
+     5/12: $idle_counter[47:32]$19
+     6/12: $idle_counter[47:32]$20
+     7/12: $idle_counter[31:16]$12
+     8/12: $idle_counter[31:16]$13
+     9/12: $idle_counter[31:16]$14
+    10/12: $idle_counter[15:0]$6
+    11/12: $idle_counter[15:0]$7
+    12/12: $idle_counter[15:0]$8
+
+1.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 23 empty switches in `\activity_counter.$27'.
+Removing empty process `activity_counter.$27'.
+Found and cleaned up 23 empty switches in `\activity_counter.$0'.
+Removing empty process `activity_counter.$0'.
+Cleaned up 46 empty switches.
+
+1.10. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+<suppressed ~26 debug messages>
+
+2. Executing Verilog backend.
+
+2.1. Executing BMUXMAP pass.
+
+2.2. Executing DEMUXMAP pass.
+Dumping module `\activity_counter'.
+
+1 modules:
+  activity_counter
+
+End of script. Logfile hash: f851ec977d, CPU: user 0.01s system 0.00s, MEM: 24.88 MB peak
+Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+Time spent: 44% 2x read_slang (0 sec), 19% 1x opt_expr (0 sec), ...
+INFO: [EDA] subprocess_run_background: wrote: /app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/yosys.slang.log
+INFO: [EDA] yosys.slang.f: wrote:  /app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/post_slang_ls.txt
+INFO: [EDA] exec: /usr/local/bin/yosys --scriptfile yosys.synth.f (in /app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth, tee_fpath='yosys.synth.log')
+INFO: [EDA] PID 4889 for /usr/local/bin/yosys
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+
+-- Executing script file `yosys.synth.f' --
+
+1. Executing Verilog-2005 frontend: /app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v
+Parsing SystemVerilog input from `/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v' to AST representation.
+Generating RTLIL representation for module `\activity_counter'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `activity_counter'. Setting top module to activity_counter.
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \activity_counter
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \activity_counter
+Removed 0 unused modules.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:271$49 in module activity_counter.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:267$47 in module activity_counter.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:263$45 in module activity_counter.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:259$43 in module activity_counter.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:255$41 in module activity_counter.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:251$39 in module activity_counter.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:247$37 in module activity_counter.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:243$35 in module activity_counter.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 8 redundant assignments.
+Promoted 0 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:271$49'.
+Found async reset \rst_n in `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:267$47'.
+Found async reset \rst_n in `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:263$45'.
+Found async reset \rst_n in `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:259$43'.
+Found async reset \rst_n in `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:255$41'.
+Found async reset \rst_n in `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:251$39'.
+Found async reset \rst_n in `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:247$37'.
+Found async reset \rst_n in `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:243$35'.
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:271$49'.
+     1/1: $0\idle_counter[63:48]
+Creating decoders for process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:267$47'.
+     1/1: $0\idle_counter[47:32]
+Creating decoders for process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:263$45'.
+     1/1: $0\idle_counter[31:16]
+Creating decoders for process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:259$43'.
+     1/1: $0\idle_counter[15:0]
+Creating decoders for process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:255$41'.
+     1/1: $0\activity_timer[15:12]
+Creating decoders for process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:251$39'.
+     1/1: $0\activity_timer[11:8]
+Creating decoders for process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:247$37'.
+     1/1: $0\activity_timer[7:4]
+Creating decoders for process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:243$35'.
+     1/1: $0\activity_timer[3:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\activity_counter.\idle_counter [63:48]' using process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:271$49'.
+  created $adff cell `$procdff$103' with positive edge clock and positive level reset.
+Creating register for signal `\activity_counter.\idle_counter [47:32]' using process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:267$47'.
+  created $adff cell `$procdff$108' with positive edge clock and positive level reset.
+Creating register for signal `\activity_counter.\idle_counter [31:16]' using process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:263$45'.
+  created $adff cell `$procdff$113' with positive edge clock and positive level reset.
+Creating register for signal `\activity_counter.\idle_counter [15:0]' using process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:259$43'.
+  created $adff cell `$procdff$118' with positive edge clock and positive level reset.
+Creating register for signal `\activity_counter.\activity_timer [15:12]' using process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:255$41'.
+  created $adff cell `$procdff$123' with positive edge clock and positive level reset.
+Creating register for signal `\activity_counter.\activity_timer [11:8]' using process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:251$39'.
+  created $adff cell `$procdff$128' with positive edge clock and positive level reset.
+Creating register for signal `\activity_counter.\activity_timer [7:4]' using process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:247$37'.
+  created $adff cell `$procdff$133' with positive edge clock and positive level reset.
+Creating register for signal `\activity_counter.\activity_timer [3:0]' using process `\activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:243$35'.
+  created $adff cell `$procdff$138' with positive edge clock and positive level reset.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:271$49'.
+Removing empty process `activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:267$47'.
+Removing empty process `activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:263$45'.
+Removing empty process `activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:259$43'.
+Removing empty process `activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:255$41'.
+Removing empty process `activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:251$39'.
+Removing empty process `activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:247$37'.
+Removing empty process `activity_counter.$proc$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:243$35'.
+Cleaned up 0 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+<suppressed ~16 debug messages>
+
+2.3. Executing FUTURE pass.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+Removed 26 unused cells and 198 unused wires.
+<suppressed ~27 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module activity_counter...
+Found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \activity_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:275$52.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:276$53.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:278$55.
+    dead port 1/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:282$59.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:283$60.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:285$62.
+    dead port 1/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:288$65.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:289$66.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:290$67.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:292$69.
+    dead port 1/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:297$74.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:298$75.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:300$77.
+    dead port 1/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:303$80.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:304$81.
+    dead port 1/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:305$82.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:307$84.
+    dead port 1/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:310$87.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:311$88.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:313$90.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:315$92.
+    dead port 1/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:317$94.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:318$95.
+    dead port 2/2 on $mux $ternary$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:320$97.
+Removed 24 multiplexer ports.
+<suppressed ~8 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \activity_counter.
+Performed a total of 0 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+Removed a total of 0 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+Removed 0 unused cells and 28 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \activity_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \activity_counter.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 15 bits (of 16) from port B of cell activity_counter.$add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:210$3 ($add).
+Removed top 15 bits (of 16) from port B of cell activity_counter.$add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:213$6 ($add).
+Removed top 15 bits (of 16) from port B of cell activity_counter.$add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:216$9 ($add).
+Removed top 28 bits (of 32) from port A of cell activity_counter.$gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:220$13 ($gt).
+Removed top 31 bits (of 32) from port B of cell activity_counter.$gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:220$13 ($gt).
+Removed top 3 bits (of 4) from port B of cell activity_counter.$sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:221$14 ($sub).
+Removed top 28 bits (of 32) from port A of cell activity_counter.$gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:223$16 ($gt).
+Removed top 31 bits (of 32) from port B of cell activity_counter.$gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:223$16 ($gt).
+Removed top 3 bits (of 4) from port B of cell activity_counter.$sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:224$17 ($sub).
+Removed top 28 bits (of 32) from port A of cell activity_counter.$gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:227$20 ($gt).
+Removed top 31 bits (of 32) from port B of cell activity_counter.$gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:227$20 ($gt).
+Removed top 3 bits (of 4) from port B of cell activity_counter.$sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:228$21 ($sub).
+Removed top 28 bits (of 32) from port A of cell activity_counter.$gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:230$23 ($gt).
+Removed top 31 bits (of 32) from port B of cell activity_counter.$gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:230$23 ($gt).
+Removed top 15 bits (of 16) from port B of cell activity_counter.$add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:231$24 ($add).
+Removed top 3 bits (of 4) from port B of cell activity_counter.$sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:232$25 ($sub).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== activity_counter ===
+
+   Number of wires:                 52
+   Number of wire bits:            490
+   Number of public wires:          52
+   Number of public wire bits:     490
+   Number of ports:                  6
+   Number of port bits:             78
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 52
+     $add                            4
+     $adff                           8
+     $gt                             4
+     $logic_and                      4
+     $lt                             4
+     $mux                           24
+     $sub                            4
+
+2.13. Executing CHECK pass (checking for obvious problems).
+Checking module activity_counter...
+Found and reported 0 problems.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+4. Executing SYNTH pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `activity_counter'. Setting top module to activity_counter.
+
+4.1.1. Analyzing design hierarchy..
+Top module:  \activity_counter
+
+4.1.2. Analyzing design hierarchy..
+Top module:  \activity_counter
+Removed 0 unused modules.
+
+4.2. Executing PROC pass (convert processes to netlists).
+
+4.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+4.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.2.4. Executing PROC_INIT pass (extract init attributes).
+
+4.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+4.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+4.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+4.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+4.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+4.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+
+4.5. Executing CHECK pass (checking for obvious problems).
+Checking module activity_counter...
+Found and reported 0 problems.
+
+4.6. Executing OPT pass (performing simple optimizations).
+
+4.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+4.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+Removed a total of 0 cells.
+
+4.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \activity_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+4.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \activity_counter.
+Performed a total of 0 changes.
+
+4.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+Removed a total of 0 cells.
+
+4.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+
+4.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+4.6.9. Finished OPT passes. (There is nothing left to do.)
+
+4.7. Executing FSM pass (extract and optimize FSM).
+
+4.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+4.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+4.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+
+4.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+4.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+4.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+4.8. Executing OPT pass (performing simple optimizations).
+
+4.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+4.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+Removed a total of 0 cells.
+
+4.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \activity_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+4.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \activity_counter.
+Performed a total of 0 changes.
+
+4.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+Removed a total of 0 cells.
+
+4.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+
+4.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+4.8.9. Finished OPT passes. (There is nothing left to do.)
+
+4.9. Executing WREDUCE pass (reducing word size of cells).
+
+4.10. Executing PEEPOPT pass (run peephole optimizers).
+
+4.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+
+4.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module activity_counter:
+  creating $macc model for $add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:210$3 ($add).
+  creating $macc model for $add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:213$6 ($add).
+  creating $macc model for $add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:216$9 ($add).
+  creating $macc model for $add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:231$24 ($add).
+  creating $macc model for $sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:221$14 ($sub).
+  creating $macc model for $sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:224$17 ($sub).
+  creating $macc model for $sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:228$21 ($sub).
+  creating $macc model for $sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:232$25 ($sub).
+  creating $alu model for $macc $sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:232$25.
+  creating $alu model for $macc $sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:228$21.
+  creating $alu model for $macc $sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:224$17.
+  creating $alu model for $macc $sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:221$14.
+  creating $alu model for $macc $add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:231$24.
+  creating $alu model for $macc $add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:216$9.
+  creating $alu model for $macc $add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:213$6.
+  creating $alu model for $macc $add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:210$3.
+  creating $alu model for $gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:220$13 ($gt): new $alu
+  creating $alu model for $gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:223$16 ($gt): new $alu
+  creating $alu model for $gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:227$20 ($gt): new $alu
+  creating $alu model for $gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:230$23 ($gt): new $alu
+  creating $alu model for $lt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:209$2 ($lt): new $alu
+  creating $alu model for $lt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:212$5 ($lt): new $alu
+  creating $alu model for $lt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:215$8 ($lt): new $alu
+  creating $alu model for $lt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:225$18 ($lt): new $alu
+  creating $alu cell for $lt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:225$18: $auto$alumacc.cc:495:replace_alu$147
+  creating $alu cell for $lt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:215$8: $auto$alumacc.cc:495:replace_alu$152
+  creating $alu cell for $lt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:212$5: $auto$alumacc.cc:495:replace_alu$157
+  creating $alu cell for $lt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:209$2: $auto$alumacc.cc:495:replace_alu$162
+  creating $alu cell for $gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:230$23: $auto$alumacc.cc:495:replace_alu$167
+  creating $alu cell for $gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:227$20: $auto$alumacc.cc:495:replace_alu$178
+  creating $alu cell for $gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:223$16: $auto$alumacc.cc:495:replace_alu$189
+  creating $alu cell for $gt$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:220$13: $auto$alumacc.cc:495:replace_alu$200
+  creating $alu cell for $add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:210$3: $auto$alumacc.cc:495:replace_alu$211
+  creating $alu cell for $add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:213$6: $auto$alumacc.cc:495:replace_alu$214
+  creating $alu cell for $add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:216$9: $auto$alumacc.cc:495:replace_alu$217
+  creating $alu cell for $add$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:231$24: $auto$alumacc.cc:495:replace_alu$220
+  creating $alu cell for $sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:221$14: $auto$alumacc.cc:495:replace_alu$223
+  creating $alu cell for $sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:224$17: $auto$alumacc.cc:495:replace_alu$226
+  creating $alu cell for $sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:228$21: $auto$alumacc.cc:495:replace_alu$229
+  creating $alu cell for $sub$/app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/slang/activity_counter.v:232$25: $auto$alumacc.cc:495:replace_alu$232
+  created 16 $alu and 0 $macc cells.
+
+4.13. Executing SHARE pass (SAT-based resource sharing).
+
+4.14. Executing OPT pass (performing simple optimizations).
+
+4.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+<suppressed ~20 debug messages>
+
+4.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+Removed a total of 0 cells.
+
+4.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \activity_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+4.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \activity_counter.
+Performed a total of 0 changes.
+
+4.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+Removed a total of 0 cells.
+
+4.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+Removed 4 unused cells and 32 unused wires.
+<suppressed ~9 debug messages>
+
+4.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+4.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \activity_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+4.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \activity_counter.
+Performed a total of 0 changes.
+
+4.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+Removed a total of 0 cells.
+
+4.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+
+4.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+4.14.16. Finished OPT passes. (There is nothing left to do.)
+
+4.15. Executing MEMORY pass.
+
+4.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+
+4.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+
+4.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+
+4.17. Executing OPT pass (performing simple optimizations).
+
+4.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+4.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+Removed a total of 0 cells.
+
+4.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+
+4.17.5. Finished fast OPT passes.
+
+4.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.19. Executing OPT pass (performing simple optimizations).
+
+4.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+4.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+Removed a total of 0 cells.
+
+4.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \activity_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+4.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \activity_counter.
+Performed a total of 0 changes.
+
+4.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+Removed a total of 0 cells.
+
+4.19.6. Executing OPT_SHARE pass.
+
+4.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+
+4.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+4.19.10. Finished OPT passes. (There is nothing left to do.)
+
+4.20. Executing TECHMAP pass (map to technology primitives).
+
+4.20.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.20.2. Continuing TECHMAP pass.
+Using template $paramod$6df0329addda9228fcc2546de2aaf14ad26c98e1\_90_alu for cells of type $alu.
+Using template $paramod$2af30114e9bd4ccb04dad757b3f0a8f6bf0615b0\_90_alu for cells of type $alu.
+Using template $paramod$8742280fdebca84e1c87f2a86ed84f62d558f4cc\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $adff.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~1082 debug messages>
+
+4.21. Executing OPT pass (performing simple optimizations).
+
+4.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+<suppressed ~856 debug messages>
+
+4.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+<suppressed ~576 debug messages>
+Removed a total of 192 cells.
+
+4.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+Removed 76 unused cells and 716 unused wires.
+<suppressed ~77 debug messages>
+
+4.21.5. Finished fast OPT passes.
+
+4.22. Executing ABC pass (technology mapping using ABC).
+
+4.22.1. Extracting gate netlist of module `\activity_counter' to `<abc-temp-dir>/input.blif'..
+Extracted 472 gates and 562 wires to a netlist network with 88 inputs and 84 outputs.
+
+4.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       12
+ABC RESULTS:            ANDNOT cells:      196
+ABC RESULTS:              NAND cells:       24
+ABC RESULTS:               NOR cells:       12
+ABC RESULTS:               NOT cells:        4
+ABC RESULTS:                OR cells:      116
+ABC RESULTS:             ORNOT cells:        8
+ABC RESULTS:              XNOR cells:       28
+ABC RESULTS:               XOR cells:       44
+ABC RESULTS:        internal signals:      390
+ABC RESULTS:           input signals:       88
+ABC RESULTS:          output signals:       84
+Removing temp directory.
+
+4.23. Executing OPT pass (performing simple optimizations).
+
+4.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module activity_counter.
+
+4.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\activity_counter'.
+Removed a total of 0 cells.
+
+4.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+Removed 0 unused cells and 272 unused wires.
+<suppressed ~1 debug messages>
+
+4.23.5. Finished fast OPT passes.
+
+4.24. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `activity_counter'. Setting top module to activity_counter.
+
+4.24.1. Analyzing design hierarchy..
+Top module:  \activity_counter
+
+4.24.2. Analyzing design hierarchy..
+Top module:  \activity_counter
+Removed 0 unused modules.
+
+4.25. Printing statistics.
+
+=== activity_counter ===
+
+   Number of wires:                380
+   Number of wire bits:            602
+   Number of public wires:          20
+   Number of public wire bits:     242
+   Number of ports:                  6
+   Number of port bits:             78
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                524
+     $_ANDNOT_                     196
+     $_AND_                         12
+     $_DFF_PN0_                     80
+     $_NAND_                        24
+     $_NOR_                         12
+     $_NOT_                          4
+     $_ORNOT_                        8
+     $_OR_                         116
+     $_XNOR_                        28
+     $_XOR_                         44
+
+4.26. Executing CHECK pass (checking for obvious problems).
+Checking module activity_counter...
+Found and reported 0 problems.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \activity_counter..
+
+6. Executing Verilog backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Dumping module `\activity_counter'.
+
+7. Executing JSON backend.
+
+End of script. Logfile hash: f2a34a0e27, CPU: user 0.17s system 0.01s, MEM: 26.92 MB peak
+Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+Time spent: 26% 1x abc (0 sec), 16% 22x opt_clean (0 sec), ...
+INFO: [EDA] subprocess_run_background: wrote: /app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/yosys.synth.log
+INFO: [EDA] yosys: wrote verilog to /app/eda.work/c49f66c9-9970-44e5-8c47-3d1251d01b11.edacmd/eda.work/activity_counter.synth/yosys/activity_counter.v
+INFO: [EDA] Time: Thu Feb 19 03:21:26 2026 stop - eda.work/eda.log
+INFO: [EDA] Closing logfile: eda.work/eda.log

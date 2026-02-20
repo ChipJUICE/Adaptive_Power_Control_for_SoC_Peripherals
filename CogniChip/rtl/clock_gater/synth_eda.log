@@ -1,0 +1,723 @@
+INFO: [EDA] Time: Thu Feb 19 03:12:56 2026 start - eda.work/eda.log
+INFO: [EDA] eda: version 0.3.10
+INFO: [EDA] main: eda synth --no-color --tool slang_yosys clock_gater.sv; (run from /app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd)
+INFO: [EDA] eda_config: --config-yml=eda_config_defaults.yml observed
+INFO: [EDA] eda_config: using config: /app/venv/lib/python3.12/site-packages/opencos/eda_config_defaults.yml
+INFO: [EDA] *** OpenCOS EDA ***
+INFO: [EDA] Detected slang_yosys (/usr/local/bin/yosys)
+INFO: [EDA] --top not specified, inferred from final source file: clock_gater (/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/clock_gater.sv)
+INFO: [EDA] synth: top-most target name: clock_gater
+INFO: [EDA] exec: /usr/local/bin/yosys --scriptfile yosys.slang.f (in /app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth, tee_fpath='yosys.slang.log')
+INFO: [EDA] PID 4461 for /usr/local/bin/yosys
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+
+-- Executing script file `yosys.slang.f' --
+
+1. Executing SLANG frontend.
+Top level design units:
+    clock_gater
+
+Build succeeded: 0 errors, 0 warnings
+
+1.1. Executing UNDRIVEN pass. (resolve undriven signals)
+
+1.2. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\clock_gater.$25'.
+Found and cleaned up 1 empty switch in `\clock_gater.$17'.
+Found and cleaned up 1 empty switch in `\clock_gater.$9'.
+Found and cleaned up 1 empty switch in `\clock_gater.$1'.
+Cleaned up 4 empty switches.
+
+1.3. Executing TRIBUF pass.
+
+1.4. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+1.5. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+1.6. Executing PROC_INIT pass (extract init attributes).
+
+1.7. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~4 debug messages>
+
+1.8. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\clock_gater.$25'.
+     1/3: $enable_latched[3]$27
+     2/3: $29
+     3/3: $28
+Creating decoders for process `\clock_gater.$17'.
+     1/3: $enable_latched[2]$19
+     2/3: $21
+     3/3: $20
+Creating decoders for process `\clock_gater.$9'.
+     1/3: $enable_latched[1]$11
+     2/3: $13
+     3/3: $12
+Creating decoders for process `\clock_gater.$1'.
+     1/3: $enable_latched[0]$3
+     2/3: $5
+     3/3: $4
+
+1.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\clock_gater.$25'.
+Removing empty process `clock_gater.$25'.
+Found and cleaned up 1 empty switch in `\clock_gater.$17'.
+Removing empty process `clock_gater.$17'.
+Found and cleaned up 1 empty switch in `\clock_gater.$9'.
+Removing empty process `clock_gater.$9'.
+Found and cleaned up 1 empty switch in `\clock_gater.$1'.
+Removing empty process `clock_gater.$1'.
+Cleaned up 4 empty switches.
+
+1.10. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+<suppressed ~16 debug messages>
+
+2. Executing Verilog backend.
+
+2.1. Executing BMUXMAP pass.
+
+2.2. Executing DEMUXMAP pass.
+Dumping module `\clock_gater'.
+
+1 modules:
+  clock_gater
+
+End of script. Logfile hash: f039f14610, CPU: user 0.01s system 0.00s, MEM: 24.27 MB peak
+Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+Time spent: 35% 2x read_slang (0 sec), 22% 1x opt_expr (0 sec), ...
+INFO: [EDA] subprocess_run_background: wrote: /app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/yosys.slang.log
+INFO: [EDA] yosys.slang.f: wrote:  /app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/post_slang_ls.txt
+INFO: [EDA] exec: /usr/local/bin/yosys --scriptfile yosys.synth.f (in /app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth, tee_fpath='yosys.synth.log')
+INFO: [EDA] PID 4462 for /usr/local/bin/yosys
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+
+-- Executing script file `yosys.synth.f' --
+
+1. Executing Verilog-2005 frontend: /app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v
+Parsing SystemVerilog input from `/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v' to AST representation.
+Generating RTLIL representation for module `\clock_gater'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `clock_gater'. Setting top module to clock_gater.
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \clock_gater
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \clock_gater
+Removed 0 unused modules.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:103$17 in module clock_gater.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:99$14 in module clock_gater.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:93$9 in module clock_gater.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:86$3 in module clock_gater.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 4 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~4 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:103$17'.
+     1/1: $1\enable_latched[0:0]
+Creating decoders for process `\clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:99$14'.
+     1/1: $1\enable_latched[3:3]
+Creating decoders for process `\clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:93$9'.
+     1/1: $1\enable_latched[2:2]
+Creating decoders for process `\clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:86$3'.
+     1/1: $1\enable_latched[1:1]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+Latch inferred for signal `\clock_gater.\enable_latched [0]' from process `\clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:103$17': $auto$proc_dlatch.cc:432:proc_dlatch$55
+Latch inferred for signal `\clock_gater.\enable_latched [3]' from process `\clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:99$14': $auto$proc_dlatch.cc:432:proc_dlatch$66
+Latch inferred for signal `\clock_gater.\enable_latched [2]' from process `\clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:93$9': $auto$proc_dlatch.cc:432:proc_dlatch$77
+Latch inferred for signal `\clock_gater.\enable_latched [1]' from process `\clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:86$3': $auto$proc_dlatch.cc:432:proc_dlatch$88
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:103$17'.
+Removing empty process `clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:103$17'.
+Found and cleaned up 1 empty switch in `\clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:99$14'.
+Removing empty process `clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:99$14'.
+Found and cleaned up 1 empty switch in `\clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:93$9'.
+Removing empty process `clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:93$9'.
+Found and cleaned up 1 empty switch in `\clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:86$3'.
+Removing empty process `clock_gater.$proc$/app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/slang/clock_gater.v:86$3'.
+Cleaned up 4 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+<suppressed ~32 debug messages>
+
+2.3. Executing FUTURE pass.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+Removed 20 unused cells and 104 unused wires.
+<suppressed ~21 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module clock_gater...
+Found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clock_gater'.
+Removed a total of 0 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \clock_gater..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \clock_gater.
+Performed a total of 0 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clock_gater'.
+Removed a total of 0 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+2.7.8. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clock_gater'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== clock_gater ===
+
+   Number of wires:                 18
+   Number of wire bits:             27
+   Number of public wires:          18
+   Number of public wire bits:      27
+   Number of ports:                  5
+   Number of port bits:             11
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 12
+     $and                            4
+     $dlatch                         4
+     $or                             4
+
+2.13. Executing CHECK pass (checking for obvious problems).
+Checking module clock_gater...
+Found and reported 0 problems.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+4. Executing SYNTH pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `clock_gater'. Setting top module to clock_gater.
+
+4.1.1. Analyzing design hierarchy..
+Top module:  \clock_gater
+
+4.1.2. Analyzing design hierarchy..
+Top module:  \clock_gater
+Removed 0 unused modules.
+
+4.2. Executing PROC pass (convert processes to netlists).
+
+4.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+4.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.2.4. Executing PROC_INIT pass (extract init attributes).
+
+4.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+4.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+4.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+4.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+4.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+4.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+4.5. Executing CHECK pass (checking for obvious problems).
+Checking module clock_gater...
+Found and reported 0 problems.
+
+4.6. Executing OPT pass (performing simple optimizations).
+
+4.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+4.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clock_gater'.
+Removed a total of 0 cells.
+
+4.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \clock_gater..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \clock_gater.
+Performed a total of 0 changes.
+
+4.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clock_gater'.
+Removed a total of 0 cells.
+
+4.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+4.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+4.6.9. Finished OPT passes. (There is nothing left to do.)
+
+4.7. Executing FSM pass (extract and optimize FSM).
+
+4.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+4.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+4.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+4.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+4.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+4.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+4.8. Executing OPT pass (performing simple optimizations).
+
+4.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+4.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clock_gater'.
+Removed a total of 0 cells.
+
+4.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \clock_gater..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \clock_gater.
+Performed a total of 0 changes.
+
+4.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clock_gater'.
+Removed a total of 0 cells.
+
+4.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+4.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+4.8.9. Finished OPT passes. (There is nothing left to do.)
+
+4.9. Executing WREDUCE pass (reducing word size of cells).
+
+4.10. Executing PEEPOPT pass (run peephole optimizers).
+
+4.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+4.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module clock_gater:
+  created 0 $alu and 0 $macc cells.
+
+4.13. Executing SHARE pass (SAT-based resource sharing).
+
+4.14. Executing OPT pass (performing simple optimizations).
+
+4.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+4.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clock_gater'.
+Removed a total of 0 cells.
+
+4.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \clock_gater..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \clock_gater.
+Performed a total of 0 changes.
+
+4.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clock_gater'.
+Removed a total of 0 cells.
+
+4.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+4.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+4.14.9. Finished OPT passes. (There is nothing left to do.)
+
+4.15. Executing MEMORY pass.
+
+4.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+4.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+4.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+4.17. Executing OPT pass (performing simple optimizations).
+
+4.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+4.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clock_gater'.
+Removed a total of 0 cells.
+
+4.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+4.17.5. Finished fast OPT passes.
+
+4.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.19. Executing OPT pass (performing simple optimizations).
+
+4.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+4.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clock_gater'.
+Removed a total of 0 cells.
+
+4.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \clock_gater..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \clock_gater.
+Performed a total of 0 changes.
+
+4.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clock_gater'.
+Removed a total of 0 cells.
+
+4.19.6. Executing OPT_SHARE pass.
+
+4.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+4.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+4.19.10. Finished OPT passes. (There is nothing left to do.)
+
+4.20. Executing TECHMAP pass (map to technology primitives).
+
+4.20.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $dlatch.
+No more expansions possible.
+<suppressed ~87 debug messages>
+
+4.21. Executing OPT pass (performing simple optimizations).
+
+4.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+4.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clock_gater'.
+Removed a total of 0 cells.
+
+4.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+4.21.5. Finished fast OPT passes.
+
+4.22. Executing ABC pass (technology mapping using ABC).
+
+4.22.1. Extracting gate netlist of module `\clock_gater' to `<abc-temp-dir>/input.blif'..
+Extracted 8 gates and 18 wires to a netlist network with 10 inputs and 8 outputs.
+
+4.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        4
+ABC RESULTS:                OR cells:        4
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:       10
+ABC RESULTS:          output signals:        8
+Removing temp directory.
+
+4.23. Executing OPT pass (performing simple optimizations).
+
+4.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clock_gater.
+
+4.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clock_gater'.
+Removed a total of 0 cells.
+
+4.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+Removed 0 unused cells and 18 unused wires.
+<suppressed ~1 debug messages>
+
+4.23.5. Finished fast OPT passes.
+
+4.24. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `clock_gater'. Setting top module to clock_gater.
+
+4.24.1. Analyzing design hierarchy..
+Top module:  \clock_gater
+
+4.24.2. Analyzing design hierarchy..
+Top module:  \clock_gater
+Removed 0 unused modules.
+
+4.25. Printing statistics.
+
+=== clock_gater ===
+
+   Number of wires:                 18
+   Number of wire bits:             27
+   Number of public wires:          18
+   Number of public wire bits:      27
+   Number of ports:                  5
+   Number of port bits:             11
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 12
+     $_AND_                          4
+     $_DLATCH_N_                     4
+     $_OR_                           4
+
+4.26. Executing CHECK pass (checking for obvious problems).
+Checking module clock_gater...
+Found and reported 0 problems.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clock_gater..
+
+6. Executing Verilog backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Dumping module `\clock_gater'.
+
+7. Executing JSON backend.
+
+End of script. Logfile hash: 1f1f31c2a2, CPU: user 0.04s system 0.00s, MEM: 21.87 MB peak
+Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+Time spent: 41% 1x abc (0 sec), 17% 19x opt_expr (0 sec), ...
+INFO: [EDA] subprocess_run_background: wrote: /app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/yosys.synth.log
+INFO: [EDA] yosys: wrote verilog to /app/eda.work/70d78cb5-5c32-4971-85a5-31439db74023.edacmd/eda.work/clock_gater.synth/yosys/clock_gater.v
+INFO: [EDA] Time: Thu Feb 19 03:12:56 2026 stop - eda.work/eda.log
+INFO: [EDA] Closing logfile: eda.work/eda.log

@@ -1,0 +1,7 @@
+# DEPS Configuration for Clock Gater Testbench
+
+clock_gater:
+  deps:
+    - clock_gater.sv
+    - tb_clock_gater.sv
+  top: tb_clock_gater

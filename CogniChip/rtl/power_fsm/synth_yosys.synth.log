@@ -1,0 +1,869 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+
+-- Executing script file `yosys.synth.f' --
+
+1. Executing Verilog-2005 frontend: /app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v
+Parsing SystemVerilog input from `/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v' to AST representation.
+Generating RTLIL representation for module `\power_fsm'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `power_fsm'. Setting top module to power_fsm.
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \power_fsm
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \power_fsm
+Removed 0 unused modules.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:270$39 in module power_fsm.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:266$37 in module power_fsm.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:262$35 in module power_fsm.
+Marked 1 switch rules as full_case in process $proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:258$33 in module power_fsm.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 16 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:270$39'.
+Found async reset \rst_n in `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:266$37'.
+Found async reset \rst_n in `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:262$35'.
+Found async reset \rst_n in `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:258$33'.
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~4 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$135'.
+     1/1: $1\_275_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:412$8.$result[1:0]$140
+Creating decoders for process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$129'.
+     1/1: $1\_241_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:360$7.$result[1:0]$134
+Creating decoders for process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$123'.
+     1/1: $1\_239_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:340$6.$result[1:0]$128
+Creating decoders for process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$117'.
+     1/1: $1\_217_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:300$5.$result[1:0]$122
+Creating decoders for process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:270$39'.
+     1/1: $0\state[7:6]
+Creating decoders for process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:266$37'.
+     1/1: $0\state[5:4]
+Creating decoders for process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:262$35'.
+     1/1: $0\state[3:2]
+Creating decoders for process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:258$33'.
+     1/1: $0\state[1:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\power_fsm.\_275_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:412$4.$result' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$135'.
+No latch inferred for signal `\power_fsm.\_275_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:412$8.$result' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$135'.
+No latch inferred for signal `\power_fsm.\_275_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:412$8.b' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$135'.
+No latch inferred for signal `\power_fsm.\_275_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:412$8.s' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$135'.
+No latch inferred for signal `\power_fsm.\_241_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:360$3.$result' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$129'.
+No latch inferred for signal `\power_fsm.\_241_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:360$7.$result' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$129'.
+No latch inferred for signal `\power_fsm.\_241_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:360$7.b' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$129'.
+No latch inferred for signal `\power_fsm.\_241_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:360$7.s' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$129'.
+No latch inferred for signal `\power_fsm.\_239_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:340$2.$result' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$123'.
+No latch inferred for signal `\power_fsm.\_239_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:340$6.$result' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$123'.
+No latch inferred for signal `\power_fsm.\_239_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:340$6.b' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$123'.
+No latch inferred for signal `\power_fsm.\_239_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:340$6.s' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$123'.
+No latch inferred for signal `\power_fsm.\_217_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:300$1.$result' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$117'.
+No latch inferred for signal `\power_fsm.\_217_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:300$5.$result' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$117'.
+No latch inferred for signal `\power_fsm.\_217_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:300$5.b' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$117'.
+No latch inferred for signal `\power_fsm.\_217_$func$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:300$5.s' from process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$117'.
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\power_fsm.\state [7:6]' using process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:270$39'.
+  created $adff cell `$procdff$165' with positive edge clock and positive level reset.
+Creating register for signal `\power_fsm.\state [5:4]' using process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:266$37'.
+  created $adff cell `$procdff$170' with positive edge clock and positive level reset.
+Creating register for signal `\power_fsm.\state [3:2]' using process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:262$35'.
+  created $adff cell `$procdff$175' with positive edge clock and positive level reset.
+Creating register for signal `\power_fsm.\state [1:0]' using process `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:258$33'.
+  created $adff cell `$procdff$180' with positive edge clock and positive level reset.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$135'.
+Removing empty process `power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$135'.
+Found and cleaned up 1 empty switch in `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$129'.
+Removing empty process `power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$129'.
+Found and cleaned up 1 empty switch in `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$123'.
+Removing empty process `power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$123'.
+Found and cleaned up 1 empty switch in `\power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$117'.
+Removing empty process `power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:0$117'.
+Removing empty process `power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:270$39'.
+Removing empty process `power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:266$37'.
+Removing empty process `power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:262$35'.
+Removing empty process `power_fsm.$proc$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:258$33'.
+Cleaned up 4 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+<suppressed ~8 debug messages>
+
+2.3. Executing FUTURE pass.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+Removed 20 unused cells and 248 unused wires.
+<suppressed ~21 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module power_fsm...
+Found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+<suppressed ~48 debug messages>
+Removed a total of 16 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:273$41.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:277$45.
+    dead port 1/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:279$47.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:280$48.
+    dead port 1/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:281$49.
+    dead port 1/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:304$53.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:305$54.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:307$56.
+    dead port 1/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:309$58.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:310$59.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:312$61.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:313$62.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:318$67.
+    dead port 1/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:320$69.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:321$70.
+    dead port 1/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:363$74.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:364$75.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:366$77.
+    dead port 1/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:368$79.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:371$82.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:373$84.
+    dead port 1/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:377$88.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:378$89.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:380$91.
+    dead port 1/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:382$93.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:383$94.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:385$96.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:389$100.
+    dead port 1/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:391$102.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:392$103.
+    dead port 1/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:416$108.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:417$109.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:419$111.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:421$113.
+    dead port 1/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:422$114.
+    dead port 2/2 on $mux $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:423$115.
+Removed 36 multiplexer ports.
+<suppressed ~8 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_fsm.
+Performed a total of 0 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+Removed a total of 0 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+Removed 0 unused cells and 52 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_fsm.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 2) from port B of cell power_fsm.$eq$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:236$12 ($eq).
+Removed top 1 bits (of 2) from port B of cell power_fsm.$eq$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:242$18 ($eq).
+Removed top 1 bits (of 2) from port B of cell power_fsm.$eq$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:248$24 ($eq).
+Removed top 1 bits (of 2) from port B of cell power_fsm.$eq$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:254$30 ($eq).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== power_fsm ===
+
+   Number of wires:                 56
+   Number of wire bits:            130
+   Number of public wires:          56
+   Number of public wire bits:     130
+   Number of ports:                  7
+   Number of port bits:             26
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 44
+     $adff                           4
+     $eq                             8
+     $logic_not                      4
+     $logic_or                       4
+     $mux                           20
+     $pmux                           4
+
+2.13. Executing CHECK pass (checking for obvious problems).
+Checking module power_fsm...
+Found and reported 0 problems.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+4. Executing SYNTH pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `power_fsm'. Setting top module to power_fsm.
+
+4.1.1. Analyzing design hierarchy..
+Top module:  \power_fsm
+
+4.1.2. Analyzing design hierarchy..
+Top module:  \power_fsm
+Removed 0 unused modules.
+
+4.2. Executing PROC pass (convert processes to netlists).
+
+4.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+4.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.2.4. Executing PROC_INIT pass (extract init attributes).
+
+4.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+4.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+4.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+4.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+4.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+4.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+4.5. Executing CHECK pass (checking for obvious problems).
+Checking module power_fsm...
+Found and reported 0 problems.
+
+4.6. Executing OPT pass (performing simple optimizations).
+
+4.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+4.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+Removed a total of 0 cells.
+
+4.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+4.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_fsm.
+Performed a total of 0 changes.
+
+4.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+Removed a total of 0 cells.
+
+4.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+4.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+4.6.9. Finished OPT passes. (There is nothing left to do.)
+
+4.7. Executing FSM pass (extract and optimize FSM).
+
+4.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+4.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+4.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+4.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+4.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+4.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+4.8. Executing OPT pass (performing simple optimizations).
+
+4.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+4.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+Removed a total of 0 cells.
+
+4.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+4.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_fsm.
+Performed a total of 0 changes.
+
+4.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+Removed a total of 0 cells.
+
+4.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$180 ($adff) from module power_fsm (D = \_105_, Q = \state [1:0]).
+Adding EN signal on $procdff$175 ($adff) from module power_fsm (D = \_067_, Q = \state [3:2]).
+Adding EN signal on $procdff$170 ($adff) from module power_fsm (D = \_127_, Q = \state [5:4]).
+Adding EN signal on $procdff$165 ($adff) from module power_fsm (D = \_034_, Q = \state [7:6]).
+
+4.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+4.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+4.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+4.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_fsm.
+Performed a total of 0 changes.
+
+4.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+Removed a total of 0 cells.
+
+4.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+4.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+4.8.16. Finished OPT passes. (There is nothing left to do.)
+
+4.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 2 bits (of 4) from port B of cell power_fsm.$auto$opt_dff.cc:195:make_patterns_logic$183 ($ne).
+Removed top 2 bits (of 4) from port B of cell power_fsm.$auto$opt_dff.cc:195:make_patterns_logic$186 ($ne).
+Removed top 2 bits (of 4) from port B of cell power_fsm.$auto$opt_dff.cc:195:make_patterns_logic$189 ($ne).
+Removed top 2 bits (of 4) from port B of cell power_fsm.$auto$opt_dff.cc:195:make_patterns_logic$192 ($ne).
+
+4.10. Executing PEEPOPT pass (run peephole optimizers).
+
+4.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+4.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module power_fsm:
+  created 0 $alu and 0 $macc cells.
+
+4.13. Executing SHARE pass (SAT-based resource sharing).
+
+4.14. Executing OPT pass (performing simple optimizations).
+
+4.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+4.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+Removed a total of 0 cells.
+
+4.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+4.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_fsm.
+Performed a total of 0 changes.
+
+4.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+Removed a total of 0 cells.
+
+4.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+4.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+4.14.9. Finished OPT passes. (There is nothing left to do.)
+
+4.15. Executing MEMORY pass.
+
+4.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+4.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+4.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+4.17. Executing OPT pass (performing simple optimizations).
+
+4.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+<suppressed ~8 debug messages>
+
+4.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+Removed a total of 0 cells.
+
+4.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+4.17.5. Finished fast OPT passes.
+
+4.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.19. Executing OPT pass (performing simple optimizations).
+
+4.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+4.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+Removed a total of 0 cells.
+
+4.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+4.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_fsm.
+    Consolidated identical input bits for $mux cell $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:276$44:
+      Old ports: A=2'00, B=2'10, Y=\_037_
+      New ports: A=1'0, B=1'1, Y=\_037_ [1]
+      New connections: \_037_ [0] = 1'0
+    Consolidated identical input bits for $mux cell $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:317$66:
+      Old ports: A=2'00, B=2'10, Y=\_074_
+      New ports: A=1'0, B=1'1, Y=\_074_ [1]
+      New connections: \_074_ [0] = 1'0
+    Consolidated identical input bits for $mux cell $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:388$99:
+      Old ports: A=2'00, B=2'10, Y=\_131_
+      New ports: A=1'0, B=1'1, Y=\_131_ [1]
+      New connections: \_131_ [0] = 1'0
+    Consolidated identical input bits for $mux cell $ternary$/app/eda.work/a0d2aa74-dbbc-40f6-8a8c-fe25657ee01c.edacmd/eda.work/power_fsm.synth/slang/power_fsm.v:393$104:
+      Old ports: A=2'00, B=2'10, Y=\_071_
+      New ports: A=1'0, B=1'1, Y=\_071_ [1]
+      New connections: \_071_ [0] = 1'0
+  Optimizing cells in module \power_fsm.
+Performed a total of 4 changes.
+
+4.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+Removed a total of 0 cells.
+
+4.19.6. Executing OPT_SHARE pass.
+
+4.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+4.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+<suppressed ~4 debug messages>
+
+4.19.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.19.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+4.19.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_fsm.
+Performed a total of 0 changes.
+
+4.19.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+Removed a total of 0 cells.
+
+4.19.14. Executing OPT_SHARE pass.
+
+4.19.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+4.19.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+4.19.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.19.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \power_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+4.19.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \power_fsm.
+Performed a total of 0 changes.
+
+4.19.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+Removed a total of 0 cells.
+
+4.19.22. Executing OPT_SHARE pass.
+
+4.19.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+4.19.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+4.19.26. Finished OPT passes. (There is nothing left to do.)
+
+4.20. Executing TECHMAP pass (map to technology primitives).
+
+4.20.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod$97565c3687be688407d1272a293bd9d0ae6852dc\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $reduce_or.
+No more expansions possible.
+<suppressed ~156 debug messages>
+
+4.21. Executing OPT pass (performing simple optimizations).
+
+4.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+<suppressed ~68 debug messages>
+
+4.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+4.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+Removed 0 unused cells and 100 unused wires.
+<suppressed ~1 debug messages>
+
+4.21.5. Finished fast OPT passes.
+
+4.22. Executing ABC pass (technology mapping using ABC).
+
+4.22.1. Extracting gate netlist of module `\power_fsm' to `<abc-temp-dir>/input.blif'..
+Extracted 92 gates and 114 wires to a netlist network with 20 inputs and 16 outputs.
+
+4.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        4
+ABC RESULTS:            ANDNOT cells:        8
+ABC RESULTS:               MUX cells:        4
+ABC RESULTS:               NOR cells:        4
+ABC RESULTS:               NOT cells:        4
+ABC RESULTS:                OR cells:       28
+ABC RESULTS:             ORNOT cells:        8
+ABC RESULTS:        internal signals:       78
+ABC RESULTS:           input signals:       20
+ABC RESULTS:          output signals:       16
+Removing temp directory.
+
+4.23. Executing OPT pass (performing simple optimizations).
+
+4.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+
+4.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\power_fsm'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+4.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+Removed 0 unused cells and 104 unused wires.
+<suppressed ~1 debug messages>
+
+4.23.5. Finished fast OPT passes.
+
+4.24. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `power_fsm'. Setting top module to power_fsm.
+
+4.24.1. Analyzing design hierarchy..
+Top module:  \power_fsm
+
+4.24.2. Analyzing design hierarchy..
+Top module:  \power_fsm
+Removed 0 unused modules.
+
+4.25. Printing statistics.
+
+=== power_fsm ===
+
+   Number of wires:                 68
+   Number of wire bits:            126
+   Number of public wires:          24
+   Number of public wire bits:      82
+   Number of ports:                  7
+   Number of port bits:             26
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 64
+     $_ANDNOT_                       8
+     $_AND_                          4
+     $_DFFE_PN0P_                    8
+     $_MUX_                          4
+     $_NOR_                          4
+     $_NOT_                          4
+     $_ORNOT_                        8
+     $_OR_                          24
+
+4.26. Executing CHECK pass (checking for obvious problems).
+Checking module power_fsm...
+Found and reported 0 problems.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \power_fsm..
+
+6. Executing Verilog backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Dumping module `\power_fsm'.
+
+7. Executing JSON backend.
+
+End of script. Logfile hash: a4c94919bd, CPU: user 0.08s system 0.00s, MEM: 22.34 MB peak
+Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+Time spent: 38% 1x abc (0 sec), 16% 23x opt_expr (0 sec), ...
+INFO: [UNKNOWN] subprocess_run_background: returncode=0

@@ -1,0 +1,127 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+
+-- Executing script file `yosys.slang.f' --
+
+1. Executing SLANG frontend.
+Top level design units:
+    power_fsm
+
+Build succeeded: 0 errors, 0 warnings
+
+1.1. Executing UNDRIVEN pass. (resolve undriven signals)
+
+1.2. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\power_fsm.$58'.
+Removing empty process `power_fsm.$55'.
+Found and cleaned up 1 empty switch in `\power_fsm.$48'.
+Found and cleaned up 1 empty switch in `\power_fsm.$42'.
+Removing empty process `power_fsm.$39'.
+Found and cleaned up 1 empty switch in `\power_fsm.$32'.
+Found and cleaned up 1 empty switch in `\power_fsm.$26'.
+Removing empty process `power_fsm.$23'.
+Found and cleaned up 1 empty switch in `\power_fsm.$16'.
+Found and cleaned up 1 empty switch in `\power_fsm.$10'.
+Removing empty process `power_fsm.$7'.
+Found and cleaned up 1 empty switch in `\power_fsm.$0'.
+Cleaned up 8 empty switches.
+
+1.3. Executing TRIBUF pass.
+
+1.4. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $58 in module power_fsm.
+Marked 8 switch rules as full_case in process $32 in module power_fsm.
+Marked 1 switch rules as full_case in process $26 in module power_fsm.
+Marked 8 switch rules as full_case in process $48 in module power_fsm.
+Marked 8 switch rules as full_case in process $16 in module power_fsm.
+Marked 1 switch rules as full_case in process $10 in module power_fsm.
+Marked 1 switch rules as full_case in process $42 in module power_fsm.
+Marked 8 switch rules as full_case in process $0 in module power_fsm.
+Removed a total of 0 dead cases.
+
+1.5. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 20 redundant assignments.
+Promoted 0 assignments to connections.
+
+1.6. Executing PROC_INIT pass (extract init attributes).
+
+1.7. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~40 debug messages>
+
+1.8. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\power_fsm.$58'.
+     1/1: $clk_req[3]$63
+Creating decoders for process `\power_fsm.$32'.
+     1/5: $state_next[5:4]$35
+     2/5: $state_next[5:4]$36
+     3/5: $state_next[5:4]$34
+     4/5: $state_next[5:4]$37
+     5/5: $state_next[5:4]$38
+Creating decoders for process `\power_fsm.$26'.
+     1/1: $clk_req[1]$31
+Creating decoders for process `\power_fsm.$48'.
+     1/5: $state_next[7:6]$51
+     2/5: $state_next[7:6]$52
+     3/5: $state_next[7:6]$50
+     4/5: $state_next[7:6]$53
+     5/5: $state_next[7:6]$54
+Creating decoders for process `\power_fsm.$16'.
+     1/5: $state_next[3:2]$19
+     2/5: $state_next[3:2]$20
+     3/5: $state_next[3:2]$18
+     4/5: $state_next[3:2]$21
+     5/5: $state_next[3:2]$22
+Creating decoders for process `\power_fsm.$10'.
+     1/1: $clk_req[0]$15
+Creating decoders for process `\power_fsm.$42'.
+     1/1: $clk_req[2]$47
+Creating decoders for process `\power_fsm.$0'.
+     1/5: $state_next[1:0]$3
+     2/5: $state_next[1:0]$4
+     3/5: $state_next[1:0]$2
+     4/5: $state_next[1:0]$5
+     5/5: $state_next[1:0]$6
+
+1.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\power_fsm.$58'.
+Removing empty process `power_fsm.$58'.
+Found and cleaned up 9 empty switches in `\power_fsm.$32'.
+Removing empty process `power_fsm.$32'.
+Found and cleaned up 1 empty switch in `\power_fsm.$26'.
+Removing empty process `power_fsm.$26'.
+Found and cleaned up 9 empty switches in `\power_fsm.$48'.
+Removing empty process `power_fsm.$48'.
+Found and cleaned up 9 empty switches in `\power_fsm.$16'.
+Removing empty process `power_fsm.$16'.
+Found and cleaned up 1 empty switch in `\power_fsm.$10'.
+Removing empty process `power_fsm.$10'.
+Found and cleaned up 1 empty switch in `\power_fsm.$42'.
+Removing empty process `power_fsm.$42'.
+Found and cleaned up 9 empty switches in `\power_fsm.$0'.
+Removing empty process `power_fsm.$0'.
+Cleaned up 40 empty switches.
+
+1.10. Executing OPT_EXPR pass (perform const folding).
+Optimizing module power_fsm.
+<suppressed ~40 debug messages>
+
+2. Executing Verilog backend.
+
+2.1. Executing BMUXMAP pass.
+
+2.2. Executing DEMUXMAP pass.
+Dumping module `\power_fsm'.
+
+1 modules:
+  power_fsm
+
+End of script. Logfile hash: b00303ebd7, CPU: user 0.01s system 0.00s, MEM: 24.45 MB peak
+Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+Time spent: 38% 2x read_slang (0 sec), 21% 1x opt_expr (0 sec), ...
+INFO: [UNKNOWN] subprocess_run_background: returncode=0

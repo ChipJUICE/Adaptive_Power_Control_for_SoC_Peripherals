@@ -1,0 +1,92 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+
+-- Executing script file `yosys.slang.f' --
+
+1. Executing SLANG frontend.
+Top level design units:
+    perf_counters
+
+Build succeeded: 0 errors, 0 warnings
+
+1.1. Executing UNDRIVEN pass. (resolve undriven signals)
+
+1.2. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\perf_counters.$0'.
+Cleaned up 2 empty switches.
+
+1.3. Executing TRIBUF pass.
+
+1.4. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 25 switch rules as full_case in process $0 in module perf_counters.
+Removed a total of 0 dead cases.
+
+1.5. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 0 assignments to connections.
+
+1.6. Executing PROC_INIT pass (extract init attributes).
+
+1.7. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~49 debug messages>
+
+1.8. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\perf_counters.$0'.
+     1/28: $sleep_count[127:96]$68
+     2/28: $sleep_count[127:96]$69
+     3/28: $idle_cycles[127:96]$61
+     4/28: $idle_cycles[127:96]$62
+     5/28: $active_cycles[127:96]$56
+     6/28: $active_cycles[127:96]$57
+     7/28: $sleep_count[95:64]$51
+     8/28: $sleep_count[95:64]$52
+     9/28: $idle_cycles[95:64]$44
+    10/28: $idle_cycles[95:64]$45
+    11/28: $active_cycles[95:64]$39
+    12/28: $active_cycles[95:64]$40
+    13/28: $sleep_count[63:32]$34
+    14/28: $sleep_count[63:32]$35
+    15/28: $idle_cycles[63:32]$27
+    16/28: $idle_cycles[63:32]$28
+    17/28: $active_cycles[63:32]$22
+    18/28: $active_cycles[63:32]$23
+    19/28: $sleep_count[31:0]$17
+    20/28: $sleep_count[31:0]$18
+    21/28: $idle_cycles[31:0]$10
+    22/28: $idle_cycles[31:0]$11
+    23/28: $active_cycles[31:0]$5
+    24/28: $active_cycles[31:0]$6
+    25/28: $prev_state$73
+    26/28: $idle_cycles$72
+    27/28: $active_cycles$71
+    28/28: $sleep_count$70
+
+1.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 49 empty switches in `\perf_counters.$0'.
+Removing empty process `perf_counters.$0'.
+Cleaned up 49 empty switches.
+
+1.10. Executing OPT_EXPR pass (perform const folding).
+Optimizing module perf_counters.
+<suppressed ~32 debug messages>
+
+2. Executing Verilog backend.
+
+2.1. Executing BMUXMAP pass.
+
+2.2. Executing DEMUXMAP pass.
+Dumping module `\perf_counters'.
+
+1 modules:
+  perf_counters
+
+End of script. Logfile hash: 4f8c962eda, CPU: user 0.01s system 0.00s, MEM: 24.95 MB peak
+Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+Time spent: 37% 2x read_slang (0 sec), 22% 1x opt_expr (0 sec), ...
+INFO: [UNKNOWN] subprocess_run_background: returncode=0

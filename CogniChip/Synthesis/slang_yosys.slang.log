@@ -1,0 +1,327 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+
+-- Executing script file `yosys.slang.f' --
+
+1. Executing SLANG frontend.
+Top level design units:
+    pwr_ctrl_top
+
+Build succeeded: 0 errors, 0 warnings
+
+1.1. Executing UNDRIVEN pass. (resolve undriven signals)
+
+1.2. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\perf_counters$pwr_ctrl_top.u_perf_counters.$0'.
+Found and cleaned up 1 empty switch in `\clock_gater$pwr_ctrl_top.u_clock_gater.$25'.
+Found and cleaned up 1 empty switch in `\clock_gater$pwr_ctrl_top.u_clock_gater.$17'.
+Found and cleaned up 1 empty switch in `\clock_gater$pwr_ctrl_top.u_clock_gater.$9'.
+Found and cleaned up 1 empty switch in `\clock_gater$pwr_ctrl_top.u_clock_gater.$1'.
+Found and cleaned up 1 empty switch in `\power_fsm$pwr_ctrl_top.u_power_fsm.$58'.
+Removing empty process `power_fsm$pwr_ctrl_top.u_power_fsm.$55'.
+Found and cleaned up 1 empty switch in `\power_fsm$pwr_ctrl_top.u_power_fsm.$48'.
+Found and cleaned up 1 empty switch in `\power_fsm$pwr_ctrl_top.u_power_fsm.$42'.
+Removing empty process `power_fsm$pwr_ctrl_top.u_power_fsm.$39'.
+Found and cleaned up 1 empty switch in `\power_fsm$pwr_ctrl_top.u_power_fsm.$32'.
+Found and cleaned up 1 empty switch in `\power_fsm$pwr_ctrl_top.u_power_fsm.$26'.
+Removing empty process `power_fsm$pwr_ctrl_top.u_power_fsm.$23'.
+Found and cleaned up 1 empty switch in `\power_fsm$pwr_ctrl_top.u_power_fsm.$16'.
+Found and cleaned up 1 empty switch in `\power_fsm$pwr_ctrl_top.u_power_fsm.$10'.
+Removing empty process `power_fsm$pwr_ctrl_top.u_power_fsm.$7'.
+Found and cleaned up 1 empty switch in `\power_fsm$pwr_ctrl_top.u_power_fsm.$0'.
+Removing empty process `idle_predictor$pwr_ctrl_top.u_idle_predictor.$28'.
+Removing empty process `idle_predictor$pwr_ctrl_top.u_idle_predictor.$26'.
+Found and cleaned up 1 empty switch in `\idle_predictor$pwr_ctrl_top.u_idle_predictor.$21'.
+Removing empty process `idle_predictor$pwr_ctrl_top.u_idle_predictor.$19'.
+Found and cleaned up 1 empty switch in `\idle_predictor$pwr_ctrl_top.u_idle_predictor.$14'.
+Removing empty process `idle_predictor$pwr_ctrl_top.u_idle_predictor.$12'.
+Found and cleaned up 1 empty switch in `\idle_predictor$pwr_ctrl_top.u_idle_predictor.$7'.
+Removing empty process `idle_predictor$pwr_ctrl_top.u_idle_predictor.$5'.
+Found and cleaned up 1 empty switch in `\idle_predictor$pwr_ctrl_top.u_idle_predictor.$0'.
+Removing empty process `activity_counter$pwr_ctrl_top.u_activity_counter.$54'.
+Found and cleaned up 1 empty switch in `\activity_counter$pwr_ctrl_top.u_activity_counter.$27'.
+Found and cleaned up 1 empty switch in `\activity_counter$pwr_ctrl_top.u_activity_counter.$0'.
+Found and cleaned up 1 empty switch in `\cfg_regs$pwr_ctrl_top.u_cfg_regs.$69'.
+Removing empty process `cfg_regs$pwr_ctrl_top.u_cfg_regs.$64'.
+Removing empty process `cfg_regs$pwr_ctrl_top.u_cfg_regs.$61'.
+Found and cleaned up 1 empty switch in `\cfg_regs$pwr_ctrl_top.u_cfg_regs.$32'.
+Found and cleaned up 1 empty switch in `\cfg_regs$pwr_ctrl_top.u_cfg_regs.$0'.
+Removing empty process `pwr_ctrl_top.$0'.
+Cleaned up 23 empty switches.
+
+1.3. Executing TRIBUF pass.
+
+1.4. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 25 switch rules as full_case in process $0 in module perf_counters$pwr_ctrl_top.u_perf_counters.
+Marked 1 switch rules as full_case in process $58 in module power_fsm$pwr_ctrl_top.u_power_fsm.
+Marked 8 switch rules as full_case in process $32 in module power_fsm$pwr_ctrl_top.u_power_fsm.
+Marked 1 switch rules as full_case in process $26 in module power_fsm$pwr_ctrl_top.u_power_fsm.
+Marked 8 switch rules as full_case in process $48 in module power_fsm$pwr_ctrl_top.u_power_fsm.
+Marked 8 switch rules as full_case in process $16 in module power_fsm$pwr_ctrl_top.u_power_fsm.
+Marked 1 switch rules as full_case in process $10 in module power_fsm$pwr_ctrl_top.u_power_fsm.
+Marked 1 switch rules as full_case in process $42 in module power_fsm$pwr_ctrl_top.u_power_fsm.
+Marked 8 switch rules as full_case in process $0 in module power_fsm$pwr_ctrl_top.u_power_fsm.
+Marked 3 switch rules as full_case in process $21 in module idle_predictor$pwr_ctrl_top.u_idle_predictor.
+Marked 3 switch rules as full_case in process $7 in module idle_predictor$pwr_ctrl_top.u_idle_predictor.
+Marked 3 switch rules as full_case in process $14 in module idle_predictor$pwr_ctrl_top.u_idle_predictor.
+Marked 3 switch rules as full_case in process $0 in module idle_predictor$pwr_ctrl_top.u_idle_predictor.
+Marked 23 switch rules as full_case in process $27 in module activity_counter$pwr_ctrl_top.u_activity_counter.
+Marked 23 switch rules as full_case in process $0 in module activity_counter$pwr_ctrl_top.u_activity_counter.
+Marked 11 switch rules as full_case in process $69 in module cfg_regs$pwr_ctrl_top.u_cfg_regs.
+Marked 7 switch rules as full_case in process $32 in module cfg_regs$pwr_ctrl_top.u_cfg_regs.
+Marked 4 switch rules as full_case in process $0 in module cfg_regs$pwr_ctrl_top.u_cfg_regs.
+Removed a total of 0 dead cases.
+
+1.5. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 60 redundant assignments.
+Promoted 0 assignments to connections.
+
+1.6. Executing PROC_INIT pass (extract init attributes).
+
+1.7. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~184 debug messages>
+
+1.8. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\perf_counters$pwr_ctrl_top.u_perf_counters.$0'.
+     1/28: $sleep_count[127:96]$68
+     2/28: $sleep_count[127:96]$69
+     3/28: $idle_cycles[127:96]$61
+     4/28: $idle_cycles[127:96]$62
+     5/28: $active_cycles[127:96]$56
+     6/28: $active_cycles[127:96]$57
+     7/28: $sleep_count[95:64]$51
+     8/28: $sleep_count[95:64]$52
+     9/28: $idle_cycles[95:64]$44
+    10/28: $idle_cycles[95:64]$45
+    11/28: $active_cycles[95:64]$39
+    12/28: $active_cycles[95:64]$40
+    13/28: $sleep_count[63:32]$34
+    14/28: $sleep_count[63:32]$35
+    15/28: $idle_cycles[63:32]$27
+    16/28: $idle_cycles[63:32]$28
+    17/28: $active_cycles[63:32]$22
+    18/28: $active_cycles[63:32]$23
+    19/28: $sleep_count[31:0]$17
+    20/28: $sleep_count[31:0]$18
+    21/28: $idle_cycles[31:0]$10
+    22/28: $idle_cycles[31:0]$11
+    23/28: $active_cycles[31:0]$5
+    24/28: $active_cycles[31:0]$6
+    25/28: $prev_state$73
+    26/28: $idle_cycles$72
+    27/28: $active_cycles$71
+    28/28: $sleep_count$70
+Creating decoders for process `\clock_gater$pwr_ctrl_top.u_clock_gater.$25'.
+     1/3: $enable_latched[3]$27
+     2/3: $29
+     3/3: $28
+Creating decoders for process `\clock_gater$pwr_ctrl_top.u_clock_gater.$17'.
+     1/3: $enable_latched[2]$19
+     2/3: $21
+     3/3: $20
+Creating decoders for process `\clock_gater$pwr_ctrl_top.u_clock_gater.$9'.
+     1/3: $enable_latched[1]$11
+     2/3: $13
+     3/3: $12
+Creating decoders for process `\clock_gater$pwr_ctrl_top.u_clock_gater.$1'.
+     1/3: $enable_latched[0]$3
+     2/3: $5
+     3/3: $4
+Creating decoders for process `\power_fsm$pwr_ctrl_top.u_power_fsm.$58'.
+     1/1: $clk_req[3]$63
+Creating decoders for process `\power_fsm$pwr_ctrl_top.u_power_fsm.$32'.
+     1/5: $state_next[5:4]$35
+     2/5: $state_next[5:4]$36
+     3/5: $state_next[5:4]$34
+     4/5: $state_next[5:4]$37
+     5/5: $state_next[5:4]$38
+Creating decoders for process `\power_fsm$pwr_ctrl_top.u_power_fsm.$26'.
+     1/1: $clk_req[1]$31
+Creating decoders for process `\power_fsm$pwr_ctrl_top.u_power_fsm.$48'.
+     1/5: $state_next[7:6]$51
+     2/5: $state_next[7:6]$52
+     3/5: $state_next[7:6]$50
+     4/5: $state_next[7:6]$53
+     5/5: $state_next[7:6]$54
+Creating decoders for process `\power_fsm$pwr_ctrl_top.u_power_fsm.$16'.
+     1/5: $state_next[3:2]$19
+     2/5: $state_next[3:2]$20
+     3/5: $state_next[3:2]$18
+     4/5: $state_next[3:2]$21
+     5/5: $state_next[3:2]$22
+Creating decoders for process `\power_fsm$pwr_ctrl_top.u_power_fsm.$10'.
+     1/1: $clk_req[0]$15
+Creating decoders for process `\power_fsm$pwr_ctrl_top.u_power_fsm.$42'.
+     1/1: $clk_req[2]$47
+Creating decoders for process `\power_fsm$pwr_ctrl_top.u_power_fsm.$0'.
+     1/5: $state_next[1:0]$3
+     2/5: $state_next[1:0]$4
+     3/5: $state_next[1:0]$2
+     4/5: $state_next[1:0]$5
+     5/5: $state_next[1:0]$6
+Creating decoders for process `\idle_predictor$pwr_ctrl_top.u_idle_predictor.$21'.
+     1/2: $adaptive_threshold[63:48]$25
+     2/2: $g_peripheral[3].adjustment$23
+Creating decoders for process `\idle_predictor$pwr_ctrl_top.u_idle_predictor.$7'.
+     1/2: $adaptive_threshold[31:16]$11
+     2/2: $g_peripheral[1].adjustment$9
+Creating decoders for process `\idle_predictor$pwr_ctrl_top.u_idle_predictor.$14'.
+     1/2: $adaptive_threshold[47:32]$18
+     2/2: $g_peripheral[2].adjustment$16
+Creating decoders for process `\idle_predictor$pwr_ctrl_top.u_idle_predictor.$0'.
+     1/2: $adaptive_threshold[15:0]$4
+     2/2: $g_peripheral[0].adjustment$2
+Creating decoders for process `\activity_counter$pwr_ctrl_top.u_activity_counter.$27'.
+     1/12: $activity_timer[15:12]$51
+     2/12: $activity_timer[15:12]$52
+     3/12: $activity_timer[15:12]$53
+     4/12: $activity_timer[11:8]$45
+     5/12: $activity_timer[11:8]$46
+     6/12: $activity_timer[11:8]$47
+     7/12: $activity_timer[7:4]$39
+     8/12: $activity_timer[7:4]$40
+     9/12: $activity_timer[7:4]$41
+    10/12: $activity_timer[3:0]$33
+    11/12: $activity_timer[3:0]$34
+    12/12: $activity_timer[3:0]$35
+Creating decoders for process `\activity_counter$pwr_ctrl_top.u_activity_counter.$0'.
+     1/12: $idle_counter[63:48]$24
+     2/12: $idle_counter[63:48]$25
+     3/12: $idle_counter[63:48]$26
+     4/12: $idle_counter[47:32]$18
+     5/12: $idle_counter[47:32]$19
+     6/12: $idle_counter[47:32]$20
+     7/12: $idle_counter[31:16]$12
+     8/12: $idle_counter[31:16]$13
+     9/12: $idle_counter[31:16]$14
+    10/12: $idle_counter[15:0]$6
+    11/12: $idle_counter[15:0]$7
+    12/12: $idle_counter[15:0]$8
+Creating decoders for process `\cfg_regs$pwr_ctrl_top.u_cfg_regs.$69'.
+     1/8: $irq_status_reg[3]$90
+     2/8: $irq_status_reg[3]$91
+     3/8: $irq_status_reg[2]$85
+     4/8: $irq_status_reg[2]$86
+     5/8: $irq_status_reg[1]$80
+     6/8: $irq_status_reg[1]$81
+     7/8: $irq_status_reg[0]$75
+     8/8: $irq_status_reg[0]$76
+Creating decoders for process `\cfg_regs$pwr_ctrl_top.u_cfg_regs.$32'.
+     1/8: $cfg_rdata[15:0]$59 [15:4]
+     2/8: $cfg_rdata[1:0]$57
+     3/8: $cfg_rdata[15:0]$58 [15:2]
+     4/8: $cfg_rdata[15:0]$45
+     5/8: $cfg_rdata[15:0]$58 [1:0]
+     6/8: $cfg_rdata[1:0]$56
+     7/8: $cfg_rdata[15:0]$59 [3:0]
+     8/8: $cfg_rdata$60
+Creating decoders for process `\cfg_regs$pwr_ctrl_top.u_cfg_regs.$0'.
+     1/14: $idle_base_th_reg$18
+     2/14: $idle_base_th_reg$19
+     3/14: $irq_status_reg$25
+     4/14: $irq_mask_reg$24
+     5/14: $wake_mask_reg$23
+     6/14: $alpha_reg$22
+     7/14: $idle_base_th_reg$21
+     8/14: $periph_en_reg$20
+     9/14: $irq_status_reg$31
+    10/14: $irq_mask_reg$30
+    11/14: $wake_mask_reg$29
+    12/14: $alpha_reg$28
+    13/14: $idle_base_th_reg$27
+    14/14: $periph_en_reg$26
+
+1.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 49 empty switches in `\perf_counters$pwr_ctrl_top.u_perf_counters.$0'.
+Removing empty process `perf_counters$pwr_ctrl_top.u_perf_counters.$0'.
+Found and cleaned up 1 empty switch in `\clock_gater$pwr_ctrl_top.u_clock_gater.$25'.
+Removing empty process `clock_gater$pwr_ctrl_top.u_clock_gater.$25'.
+Found and cleaned up 1 empty switch in `\clock_gater$pwr_ctrl_top.u_clock_gater.$17'.
+Removing empty process `clock_gater$pwr_ctrl_top.u_clock_gater.$17'.
+Found and cleaned up 1 empty switch in `\clock_gater$pwr_ctrl_top.u_clock_gater.$9'.
+Removing empty process `clock_gater$pwr_ctrl_top.u_clock_gater.$9'.
+Found and cleaned up 1 empty switch in `\clock_gater$pwr_ctrl_top.u_clock_gater.$1'.
+Removing empty process `clock_gater$pwr_ctrl_top.u_clock_gater.$1'.
+Found and cleaned up 1 empty switch in `\power_fsm$pwr_ctrl_top.u_power_fsm.$58'.
+Removing empty process `power_fsm$pwr_ctrl_top.u_power_fsm.$58'.
+Found and cleaned up 9 empty switches in `\power_fsm$pwr_ctrl_top.u_power_fsm.$32'.
+Removing empty process `power_fsm$pwr_ctrl_top.u_power_fsm.$32'.
+Found and cleaned up 1 empty switch in `\power_fsm$pwr_ctrl_top.u_power_fsm.$26'.
+Removing empty process `power_fsm$pwr_ctrl_top.u_power_fsm.$26'.
+Found and cleaned up 9 empty switches in `\power_fsm$pwr_ctrl_top.u_power_fsm.$48'.
+Removing empty process `power_fsm$pwr_ctrl_top.u_power_fsm.$48'.
+Found and cleaned up 9 empty switches in `\power_fsm$pwr_ctrl_top.u_power_fsm.$16'.
+Removing empty process `power_fsm$pwr_ctrl_top.u_power_fsm.$16'.
+Found and cleaned up 1 empty switch in `\power_fsm$pwr_ctrl_top.u_power_fsm.$10'.
+Removing empty process `power_fsm$pwr_ctrl_top.u_power_fsm.$10'.
+Found and cleaned up 1 empty switch in `\power_fsm$pwr_ctrl_top.u_power_fsm.$42'.
+Removing empty process `power_fsm$pwr_ctrl_top.u_power_fsm.$42'.
+Found and cleaned up 9 empty switches in `\power_fsm$pwr_ctrl_top.u_power_fsm.$0'.
+Removing empty process `power_fsm$pwr_ctrl_top.u_power_fsm.$0'.
+Found and cleaned up 3 empty switches in `\idle_predictor$pwr_ctrl_top.u_idle_predictor.$21'.
+Removing empty process `idle_predictor$pwr_ctrl_top.u_idle_predictor.$21'.
+Found and cleaned up 3 empty switches in `\idle_predictor$pwr_ctrl_top.u_idle_predictor.$7'.
+Removing empty process `idle_predictor$pwr_ctrl_top.u_idle_predictor.$7'.
+Found and cleaned up 3 empty switches in `\idle_predictor$pwr_ctrl_top.u_idle_predictor.$14'.
+Removing empty process `idle_predictor$pwr_ctrl_top.u_idle_predictor.$14'.
+Found and cleaned up 3 empty switches in `\idle_predictor$pwr_ctrl_top.u_idle_predictor.$0'.
+Removing empty process `idle_predictor$pwr_ctrl_top.u_idle_predictor.$0'.
+Found and cleaned up 23 empty switches in `\activity_counter$pwr_ctrl_top.u_activity_counter.$27'.
+Removing empty process `activity_counter$pwr_ctrl_top.u_activity_counter.$27'.
+Found and cleaned up 23 empty switches in `\activity_counter$pwr_ctrl_top.u_activity_counter.$0'.
+Removing empty process `activity_counter$pwr_ctrl_top.u_activity_counter.$0'.
+Found and cleaned up 15 empty switches in `\cfg_regs$pwr_ctrl_top.u_cfg_regs.$69'.
+Removing empty process `cfg_regs$pwr_ctrl_top.u_cfg_regs.$69'.
+Found and cleaned up 11 empty switches in `\cfg_regs$pwr_ctrl_top.u_cfg_regs.$32'.
+Removing empty process `cfg_regs$pwr_ctrl_top.u_cfg_regs.$32'.
+Found and cleaned up 7 empty switches in `\cfg_regs$pwr_ctrl_top.u_cfg_regs.$0'.
+Removing empty process `cfg_regs$pwr_ctrl_top.u_cfg_regs.$0'.
+Cleaned up 184 empty switches.
+
+1.10. Executing OPT_EXPR pass (perform const folding).
+Optimizing module perf_counters$pwr_ctrl_top.u_perf_counters.
+<suppressed ~32 debug messages>
+Optimizing module clock_gater$pwr_ctrl_top.u_clock_gater.
+<suppressed ~16 debug messages>
+Optimizing module power_fsm$pwr_ctrl_top.u_power_fsm.
+<suppressed ~40 debug messages>
+Optimizing module idle_predictor$pwr_ctrl_top.u_idle_predictor.
+<suppressed ~1 debug messages>
+Optimizing module activity_counter$pwr_ctrl_top.u_activity_counter.
+<suppressed ~26 debug messages>
+Optimizing module cfg_regs$pwr_ctrl_top.u_cfg_regs.
+<suppressed ~20 debug messages>
+Optimizing module pwr_ctrl_top.
+
+2. Executing Verilog backend.
+
+2.1. Executing BMUXMAP pass.
+
+2.2. Executing DEMUXMAP pass.
+Dumping module `\activity_counter$pwr_ctrl_top.u_activity_counter'.
+Dumping module `\cfg_regs$pwr_ctrl_top.u_cfg_regs'.
+Dumping module `\clock_gater$pwr_ctrl_top.u_clock_gater'.
+Dumping module `\idle_predictor$pwr_ctrl_top.u_idle_predictor'.
+Dumping module `\perf_counters$pwr_ctrl_top.u_perf_counters'.
+Dumping module `\power_fsm$pwr_ctrl_top.u_power_fsm'.
+Dumping module `\pwr_ctrl_top'.
+
+7 modules:
+  activity_counter$pwr_ctrl_top.u_activity_counter
+  cfg_regs$pwr_ctrl_top.u_cfg_regs
+  clock_gater$pwr_ctrl_top.u_clock_gater
+  idle_predictor$pwr_ctrl_top.u_idle_predictor
+  perf_counters$pwr_ctrl_top.u_perf_counters
+  power_fsm$pwr_ctrl_top.u_power_fsm
+  pwr_ctrl_top
+
+End of script. Logfile hash: 6130bc9299, CPU: user 0.04s system 0.00s, MEM: 26.98 MB peak
+Yosys 0.53 (git sha1 53c22ab7c, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+Time spent: 46% 2x read_slang (0 sec), 24% 1x opt_expr (0 sec), ...
+INFO: [UNKNOWN] subprocess_run_background: returncode=0

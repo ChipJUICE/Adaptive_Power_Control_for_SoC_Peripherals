@@ -1,0 +1,21 @@
+# ==============================================================================
+# DEPS.yml - Dependency configuration for pwr_ctrl_top
+# ==============================================================================
+
+# Synthesis target - Design only (no testbench)
+pwr_ctrl_top:
+  deps:
+    # Submodules (dependencies for pwr_ctrl_top)
+    - top/cfg_regs.sv
+    - top/activity_counter.sv
+    - top/idle_predictor.sv
+    - top/power_fsm.sv
+    - top/clock_gater.sv
+    - top/perf_counters.sv
+    
+    # Top-level design
+    - pwr_ctrl_top.sv
+  
+  top: pwr_ctrl_top
+
+
