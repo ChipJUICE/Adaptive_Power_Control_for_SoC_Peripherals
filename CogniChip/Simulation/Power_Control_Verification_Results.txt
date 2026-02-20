@@ -1,0 +1,101 @@
+VERIFICATION RESULTS – POWER CONTROL TOP (Source: Simulation Log –
+Verilator Run)
+
+------------------------------------------------------------------------
+
+SIMULATION SUMMARY Tool Used : Verilator 5.038 Top Module : pwr_ctrl_top
+Testbench : tb_pwr_ctrl_top Peripherals (N) : 4 Data Width (W) : 16
+Total Tests : 8 Errors : 0 FINAL RESULT : TEST PASSED
+
+------------------------------------------------------------------------
+
+1)  RESET VERIFICATION
+
+Objective: Verify correct post-reset state.
+
+Results: - All peripherals entered low-power state (state = 10) - All
+gated clocks disabled (gclk = 0) - System initialized into safe
+low-power configuration
+
+Status: PASS
+
+------------------------------------------------------------------------
+
+2)  CONFIGURATION REGISTER VALIDATION
+
+Registers Tested: - PERIPH_EN - IDLE_BASE_TH - ALPHA - WAKE_MASK
+
+Results: - Correct address decoding - Successful write transactions - No
+mismatches observed - Configuration interface functioning correctly
+
+Status: PASS
+
+------------------------------------------------------------------------
+
+3)  IDLE → SLEEP TRANSITION
+
+Test: Peripheral should enter sleep after idle threshold.
+
+Results: - Peripheral 0 transitioned to low-power state - FSM state
+updated correctly - Wake event restored ACTIVE state (state = 00)
+
+Status: PASS
+
+------------------------------------------------------------------------
+
+4)  WAKE MASK FUNCTIONALITY
+
+Test Cases: - Wake masked → Should NOT wake - Wake enabled → Should wake
+
+Results: - Masked wake correctly prevented transition - Enabled wake
+restored ACTIVE state - Selective wake control verified
+
+Status: PASS
+
+------------------------------------------------------------------------
+
+5)  MULTI-PERIPHERAL INDEPENDENCE
+
+Test: Wake only peripheral 2.
+
+Results: - Peripheral 2 transitioned to ACTIVE - Other peripherals
+unaffected - Disabled peripheral remained in low-power state -
+Independent control verified
+
+Status: PASS
+
+------------------------------------------------------------------------
+
+6)  CLOCK GATING & SCAN OVERRIDE
+
+Test Cases: - Active mode clock behavior - Sleep mode clock gating -
+Scan enable override
+
+Results: - No clock toggles observed in sleep mode - Clock properly
+gated for power savings - Scan behavior documented without functional
+errors
+
+Status: PASS
+
+------------------------------------------------------------------------
+
+OVERALL VERIFICATION METRICS
+
+-   Total Functional Tests: 8
+-   Functional Errors: 0
+-   FSM Transitions: Verified
+-   Configuration Interface: Verified
+-   Wake Mask Logic: Verified
+-   Clock Gating: Verified
+-   Peripheral Isolation: Verified
+
+------------------------------------------------------------------------
+
+FINAL CONCLUSION
+
+The Power Control Top module successfully passed all verification
+phases. FSM transitions, configuration registers, wake logic, clock
+gating, and multi-peripheral independence were validated with zero
+functional errors.
+
+------------------------------------------------------------------------
