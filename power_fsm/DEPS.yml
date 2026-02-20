@@ -1,3 +1,0 @@
-power_fsm:
-  deps:
-    - power_fsm.sv
