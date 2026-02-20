@@ -86,6 +86,7 @@ CogniChip/
 ├── Simulation/
 │   ├── Final_waveform.fst
 │   ├── Simulation.json
+│   ├── Simulation_log.txt
 │
 ├── Synthesis/
 │   ├── DEPS.yml
